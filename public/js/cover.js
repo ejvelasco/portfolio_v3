@@ -1,6 +1,8 @@
 import Rellax from 'rellax';
+import SmoothScroll from 'smooth-scroll';
 document.addEventListener("DOMContentLoaded", (event) => { 
 	const rellax = new Rellax('.rellax');
+	const scroll = new SmoothScroll('a[href*="#"]');
 	const cover = document.getElementById('cover');
 	const carousel = document.getElementById('controlled-carousel');
 	const menuToggle = document.getElementById('menu-toggle');
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	menuToggle.addEventListener('click', (event) => {
 		const bars = document.getElementsByClassName('bar');
 		if (!clicked) {
-			menu.className = 'expanded';
+			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach((key) => {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar transparent';
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				}
 			});	
 		} else {
-			menu.className = '';
+			menu.style.marginLeft = '-100%';
 			Object.keys(bars).forEach((key) => {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar short';

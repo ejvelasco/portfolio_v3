@@ -12,7 +12,12 @@ function Cover(){
 					<span className='bar transparent'></span>
 				</div>
 			</span>
-			<div id='menu' className='hidden'>
+			<div id='menu'>
+				<ul>
+					<li><a data-scroll href="#cover">Home</a></li>
+					<li><a data-scroll href="#controlled-carousel">Projects</a></li>
+					<li>About Me</li>
+				</ul>
 			</div>
 			<div id='cover'>
 				<p className='logo rellax'> EV </p>

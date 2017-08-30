@@ -7348,7 +7348,7 @@ Checkbox.defaultProps = defaultProps;
 exports['default'] = (0, _bootstrapUtils.bsClass)('checkbox', Checkbox);
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":444}],182:[function(require,module,exports){
+},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":445}],182:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8207,7 +8207,7 @@ ControlLabel.contextTypes = contextTypes;
 exports['default'] = (0, _bootstrapUtils.bsClass)('control-label', ControlLabel);
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":444}],187:[function(require,module,exports){
+},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":445}],187:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8632,7 +8632,7 @@ UncontrolledDropdown.Menu = _DropdownMenu2['default'];
 exports['default'] = UncontrolledDropdown;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./ButtonGroup":176,"./DropdownMenu":189,"./DropdownToggle":190,"./utils/PropTypes":260,"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"dom-helpers/activeElement":103,"dom-helpers/query/contains":114,"keycode":157,"prop-types":168,"prop-types-extra/lib/all":160,"prop-types-extra/lib/elementType":161,"prop-types-extra/lib/isRequiredForA11y":162,"react":439,"react-dom":270,"uncontrollable":442,"warning":444}],188:[function(require,module,exports){
+},{"./ButtonGroup":176,"./DropdownMenu":189,"./DropdownToggle":190,"./utils/PropTypes":260,"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"dom-helpers/activeElement":103,"dom-helpers/query/contains":114,"keycode":157,"prop-types":168,"prop-types-extra/lib/all":160,"prop-types-extra/lib/elementType":161,"prop-types-extra/lib/isRequiredForA11y":162,"react":439,"react-dom":270,"uncontrollable":443,"warning":445}],188:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9434,7 +9434,7 @@ FormControl.Static = _FormControlStatic2['default'];
 exports['default'] = (0, _bootstrapUtils.bsClass)('form-control', (0, _bootstrapUtils.bsSizes)([_StyleConfig.Size.SMALL, _StyleConfig.Size.LARGE], FormControl));
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./FormControlFeedback":194,"./FormControlStatic":195,"./utils/StyleConfig":261,"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"warning":444}],194:[function(require,module,exports){
+},{"./FormControlFeedback":194,"./FormControlStatic":195,"./utils/StyleConfig":261,"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"warning":445}],194:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -12798,7 +12798,7 @@ Nav.contextTypes = contextTypes;
 exports['default'] = (0, _bootstrapUtils.bsClass)('nav', (0, _bootstrapUtils.bsStyles)(['tabs', 'pills'], Nav));
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"keycode":157,"prop-types":168,"prop-types-extra/lib/all":160,"react":439,"react-dom":270,"warning":444}],223:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"keycode":157,"prop-types":168,"prop-types-extra/lib/all":160,"react":439,"react-dom":270,"warning":445}],223:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13404,7 +13404,7 @@ UncontrollableNavbar.Link = createSimpleWrapper('a', 'link', 'NavbarLink');
 // Set bsStyles here so they can be overridden.
 exports['default'] = (0, _bootstrapUtils.bsStyles)([_StyleConfig.Style.DEFAULT, _StyleConfig.Style.INVERSE], _StyleConfig.Style.DEFAULT, UncontrollableNavbar);
 module.exports = exports['default'];
-},{"./Grid":198,"./NavbarBrand":226,"./NavbarCollapse":227,"./NavbarHeader":228,"./NavbarToggle":229,"./utils/StyleConfig":261,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"uncontrollable":442}],226:[function(require,module,exports){
+},{"./Grid":198,"./NavbarBrand":226,"./NavbarCollapse":227,"./NavbarHeader":228,"./NavbarToggle":229,"./utils/StyleConfig":261,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"uncontrollable":443}],226:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -14274,7 +14274,7 @@ OverlayTrigger.defaultProps = defaultProps;
 exports['default'] = OverlayTrigger;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Overlay":230,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"dom-helpers/query/contains":114,"prop-types":168,"react":439,"react-dom":270,"warning":444}],232:[function(require,module,exports){
+},{"./Overlay":230,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"dom-helpers/query/contains":114,"prop-types":168,"react":439,"react-dom":270,"warning":445}],232:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -15951,7 +15951,7 @@ Radio.defaultProps = defaultProps;
 exports['default'] = (0, _bootstrapUtils.bsClass)('radio', Radio);
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":444}],243:[function(require,module,exports){
+},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":445}],243:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -16064,7 +16064,7 @@ ResponsiveEmbed.defaultProps = defaultProps;
 exports['default'] = (0, _bootstrapUtils.bsClass)('embed-responsive', ResponsiveEmbed);
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":444}],244:[function(require,module,exports){
+},{"./utils/bootstrapUtils":264,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"react":439,"warning":445}],244:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -16704,7 +16704,7 @@ TabContainer.childContextTypes = childContextTypes;
 
 exports['default'] = (0, _uncontrollable2['default'])(TabContainer, { activeKey: 'onSelect' });
 module.exports = exports['default'];
-},{"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"prop-types":168,"react":439,"uncontrollable":442}],250:[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"prop-types":168,"react":439,"uncontrollable":443}],250:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -17246,7 +17246,7 @@ TabPane.childContextTypes = childContextTypes;
 exports['default'] = (0, _bootstrapUtils.bsClass)('tab-pane', TabPane);
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Fade":191,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"warning":444}],252:[function(require,module,exports){
+},{"./Fade":191,"./utils/bootstrapUtils":264,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"classnames":101,"prop-types":168,"prop-types-extra/lib/elementType":161,"react":439,"warning":445}],252:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -17568,7 +17568,7 @@ Tabs.defaultProps = defaultProps;
 
 exports['default'] = (0, _uncontrollable2['default'])(Tabs, { activeKey: 'onSelect' });
 module.exports = exports['default'];
-},{"./Nav":222,"./NavItem":224,"./TabContainer":249,"./TabContent":250,"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"prop-types":168,"prop-types-extra/lib/isRequiredForA11y":162,"react":439,"uncontrollable":442}],254:[function(require,module,exports){
+},{"./Nav":222,"./NavItem":224,"./TabContainer":249,"./TabContent":250,"./utils/ValidComponentChildren":263,"./utils/bootstrapUtils":264,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"prop-types":168,"prop-types-extra/lib/isRequiredForA11y":162,"react":439,"uncontrollable":443}],254:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -17981,7 +17981,7 @@ UncontrolledToggleButtonGroup.Button = _ToggleButton2['default'];
 exports['default'] = UncontrolledToggleButtonGroup;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./ButtonGroup":176,"./ToggleButton":255,"./utils/ValidComponentChildren":263,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"invariant":156,"prop-types":168,"react":439,"uncontrollable":442}],257:[function(require,module,exports){
+},{"./ButtonGroup":176,"./ToggleButton":255,"./utils/ValidComponentChildren":263,"./utils/createChainedFunction":266,"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/extends":10,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/objectWithoutProperties":12,"babel-runtime/helpers/possibleConstructorReturn":13,"invariant":156,"prop-types":168,"react":439,"uncontrollable":443}],257:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19330,7 +19330,7 @@ function _resetWarned() {
   warned = {};
 }
 }).call(this,require('_process'))
-},{"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/possibleConstructorReturn":13,"babel-runtime/helpers/typeof":14,"warning":444}],268:[function(require,module,exports){
+},{"_process":159,"babel-runtime/helpers/classCallCheck":9,"babel-runtime/helpers/inherits":11,"babel-runtime/helpers/possibleConstructorReturn":13,"babel-runtime/helpers/typeof":14,"warning":445}],268:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36038,7 +36038,7 @@ Modal.Manager = _ModalManager2.default;
 
 exports.default = Modal;
 module.exports = exports['default'];
-},{"./ModalManager":398,"./Portal":400,"./utils/addEventListener":404,"./utils/addFocusListener":405,"./utils/getContainer":407,"./utils/ownerDocument":410,"dom-helpers/activeElement":103,"dom-helpers/query/contains":114,"dom-helpers/util/inDOM":131,"prop-types":168,"react":439,"react-prop-types/lib/componentOrElement":411,"react-prop-types/lib/elementType":412,"warning":444}],398:[function(require,module,exports){
+},{"./ModalManager":398,"./Portal":400,"./utils/addEventListener":404,"./utils/addFocusListener":405,"./utils/getContainer":407,"./utils/ownerDocument":410,"dom-helpers/activeElement":103,"dom-helpers/query/contains":114,"dom-helpers/util/inDOM":131,"prop-types":168,"react":439,"react-prop-types/lib/componentOrElement":411,"react-prop-types/lib/elementType":412,"warning":445}],398:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40263,6 +40263,11 @@ module.exports = require('./lib/React');
 }));
 
 },{}],441:[function(require,module,exports){
+(function (global){
+/*! smooth-scroll v12.1.4 | (c) 2017 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */
+!(function(e,t){"function"==typeof define&&define.amd?define([],(function(){return t(e)})):"object"==typeof exports?module.exports=t(e):e.SmoothScroll=t(e)})("undefined"!=typeof global?global:"undefined"!=typeof window?window:this,(function(e){"use strict";var t="querySelector"in document&&"addEventListener"in e&&"requestAnimationFrame"in e&&"closest"in e.Element.prototype,n={ignore:"[data-scroll-ignore]",header:null,speed:500,offset:0,easing:"easeInOutCubic",customEasing:null,before:function(){},after:function(){}},o=function(){for(var e={},t=0,n=arguments.length;t<n;t++){var o=arguments[t];!(function(t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])})(o)}return e},a=function(t){return parseInt(e.getComputedStyle(t).height,10)},r=function(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");t>=1&&t<=31||127==t||0===a&&t>=48&&t<=57||1===a&&t>=48&&t<=57&&45===i?r+="\\"+t.toString(16)+" ":r+=t>=128||45===t||95===t||t>=48&&t<=57||t>=65&&t<=90||t>=97&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r},i=function(e,t){var n;return"easeInQuad"===e.easing&&(n=t*t),"easeOutQuad"===e.easing&&(n=t*(2-t)),"easeInOutQuad"===e.easing&&(n=t<.5?2*t*t:(4-2*t)*t-1),"easeInCubic"===e.easing&&(n=t*t*t),"easeOutCubic"===e.easing&&(n=--t*t*t+1),"easeInOutCubic"===e.easing&&(n=t<.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1),"easeInQuart"===e.easing&&(n=t*t*t*t),"easeOutQuart"===e.easing&&(n=1- --t*t*t*t),"easeInOutQuart"===e.easing&&(n=t<.5?8*t*t*t*t:1-8*--t*t*t*t),"easeInQuint"===e.easing&&(n=t*t*t*t*t),"easeOutQuint"===e.easing&&(n=1+--t*t*t*t*t),"easeInOutQuint"===e.easing&&(n=t<.5?16*t*t*t*t*t:1+16*--t*t*t*t*t),e.customEasing&&(n=e.customEasing(t)),n||t},u=function(){return parseInt(e.getComputedStyle(document.documentElement).height,10)},c=function(e,t,n){var o=0;if(e.offsetParent)do{o+=e.offsetTop,e=e.offsetParent}while(e);return o=Math.max(o-t-n,0)},s=function(e){return e?a(e)+e.offsetTop:0},l=function(t,n,o){o||(t.focus(),document.activeElement.id!==t.id&&(t.setAttribute("tabindex","-1"),t.focus(),t.style.outline="none"),e.scrollTo(0,n))},f=function(t){return!!("matchMedia"in e&&e.matchMedia("(prefers-reduced-motion)").matches)};return function(a,d){var h,m,g,p,v,b,y,S={};S.cancelScroll=function(){cancelAnimationFrame(y)},S.animateScroll=function(t,a,r){var f=o(h||n,r||{}),d="[object Number]"===Object.prototype.toString.call(t),m=d||!t.tagName?null:t;if(d||m){var g=e.pageYOffset;f.header&&!p&&(p=document.querySelector(f.header)),v||(v=s(p));var b,y,I,O=d?t:c(m,v,parseInt("function"==typeof f.offset?f.offset():f.offset,10)),A=O-g,E=u(),C=0,w=function(n,o){var r=e.pageYOffset;if(n==o||r==o||(g<o&&e.innerHeight+r)>=E)return S.cancelScroll(),l(t,o,d),f.after(t,a),b=null,!0},Q=function(t){b||(b=t),C+=t-b,y=C/parseInt(f.speed,10),y=y>1?1:y,I=g+A*i(f,y),e.scrollTo(0,Math.floor(I)),w(I,O)||(e.requestAnimationFrame(Q),b=t)};0===e.pageYOffset&&e.scrollTo(0,0),f.before(t,a),S.cancelScroll(),e.requestAnimationFrame(Q)}};var I=function(e){m&&(m.id=m.getAttribute("data-scroll-id"),S.animateScroll(m,g),m=null,g=null)},O=function(t){if(!f()&&0===t.button&&!t.metaKey&&!t.ctrlKey&&(g=t.target.closest(a))&&"a"===g.tagName.toLowerCase()&&!t.target.closest(h.ignore)&&g.hostname===e.location.hostname&&g.pathname===e.location.pathname&&/#/.test(g.href)){var n;try{n=r(decodeURIComponent(g.hash))}catch(e){n=r(g.hash)}if("#"===n){t.preventDefault(),m=document.body;var o=m.id?m.id:"smooth-scroll-top";return m.setAttribute("data-scroll-id",o),m.id="",void(e.location.hash.substring(1)===o?I():e.location.hash=o)}m=document.querySelector(n),m&&(m.setAttribute("data-scroll-id",m.id),m.id="",g.hash===e.location.hash&&(t.preventDefault(),I()))}},A=function(e){b||(b=setTimeout((function(){b=null,v=s(p)}),66))};return S.destroy=function(){h&&(document.removeEventListener("click",O,!1),e.removeEventListener("resize",A,!1),S.cancelScroll(),h=null,m=null,g=null,p=null,v=null,b=null,y=null)},S.init=function(a){t&&(S.destroy(),h=o(n,a||{}),p=h.header?document.querySelector(h.header):null,v=s(p),document.addEventListener("click",O,!1),e.addEventListener("hashchange",I,!1),p&&e.addEventListener("resize",A,!1))},S.init(d),S}}));
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],442:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40458,7 +40463,7 @@ function createUncontrollable(mixin, set) {
   }
 }
 module.exports = exports['default'];
-},{"./utils":443,"invariant":156,"react":439}],442:[function(require,module,exports){
+},{"./utils":444,"invariant":156,"react":439}],443:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40490,7 +40495,7 @@ function set(component, propName, handler, value, args) {
 
 exports.default = (0, _createUncontrollable2.default)(mixin, set);
 module.exports = exports['default'];
-},{"./createUncontrollable":441}],443:[function(require,module,exports){
+},{"./createUncontrollable":442}],444:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -40609,7 +40614,7 @@ function isReactComponent(component) {
   return !!(component && component.prototype && component.prototype.isReactComponent);
 }
 }).call(this,require('_process'))
-},{"_process":159,"invariant":156,"react":439}],444:[function(require,module,exports){
+},{"_process":159,"invariant":156,"react":439}],445:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -40673,17 +40678,22 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":159}],445:[function(require,module,exports){
+},{"_process":159}],446:[function(require,module,exports){
 'use strict';
 
 var _rellax = require('rellax');
 
 var _rellax2 = _interopRequireDefault(_rellax);
 
+var _smoothScroll = require('smooth-scroll');
+
+var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
 	var rellax = new _rellax2.default('.rellax');
+	var scroll = new _smoothScroll2.default('a[href*="#"]');
 	var cover = document.getElementById('cover');
 	var carousel = document.getElementById('controlled-carousel');
 	var menuToggle = document.getElementById('menu-toggle');
@@ -40727,7 +40737,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	menuToggle.addEventListener('click', function (event) {
 		var bars = document.getElementsByClassName('bar');
 		if (!clicked) {
-			menu.className = 'expanded';
+			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach(function (key) {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar transparent';
@@ -40740,7 +40750,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				}
 			});
 		} else {
-			menu.className = '';
+			menu.style.marginLeft = '-100%';
 			Object.keys(bars).forEach(function (key) {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar short';
@@ -40758,7 +40768,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	});
 });
 
-},{"rellax":440}],446:[function(require,module,exports){
+},{"rellax":440,"smooth-scroll":441}],447:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -40783,7 +40793,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/cover.js":445,"./components/App.jsx":447,"react":439,"react-dom":270,"rellax":440}],447:[function(require,module,exports){
+},{"../js/cover.js":446,"./components/App.jsx":448,"react":439,"react-dom":270,"rellax":440}],448:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40815,14 +40825,12 @@ function App() {
 
 exports.default = App;
 
-},{"./ControlledCarousel.jsx":448,"./Cover.jsx":449,"react":439}],448:[function(require,module,exports){
+},{"./ControlledCarousel.jsx":449,"./Cover.jsx":450,"react":439}],449:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -40832,94 +40840,59 @@ var _reactBootstrap = require('react-bootstrap');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 var items = [{
 	label: 'First Label',
 	desc: 'Some cool stuff',
-	url: '/img/placeholder.jpg'
+	url: '/img/hummingbird.jpg'
 }, {
 	label: 'Second Label',
 	desc: 'Some more cool stuff',
-	url: '/img/placeholder.jpg'
+	url: '/img/hummingbird.jpg'
 }, {
 	label: 'Third Label',
 	desc: 'Last cool stuff',
-	url: '/img/placeholder.jpg'
+	url: '/img/hummingbird.jpg'
 }];
 
-var ControlledCarousel = function (_React$Component) {
-	_inherits(ControlledCarousel, _React$Component);
-
-	function ControlledCarousel(props) {
-		_classCallCheck(this, ControlledCarousel);
-
-		var _this = _possibleConstructorReturn(this, (ControlledCarousel.__proto__ || Object.getPrototypeOf(ControlledCarousel)).call(this, props));
-
-		_this.state = {
-			index: 0,
-			direction: null
-		};
-		return _this;
-	}
-
-	_createClass(ControlledCarousel, [{
-		key: 'handleSelect',
-		value: function handleSelect(selectedIndex, e) {
-			this.setState({
-				index: selectedIndex,
-				direction: e.direction
-			});
-		}
-	}, {
-		key: 'toCarouselItems',
-		value: function toCarouselItems(item, i) {
-			return _react2.default.createElement(
-				_reactBootstrap.Carousel.Item,
-				{ key: i },
-				_react2.default.createElement('img', { className: 'carousel-img', src: item.url }),
-				_react2.default.createElement(
-					_reactBootstrap.Carousel.Caption,
-					null,
-					_react2.default.createElement(
-						'h3',
-						null,
-						item.label
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						item.desc
-					)
-				)
-			);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			var carouselItems = items.map(function (item, i) {
-				return _this2.toCarouselItems(item, i);
-			});
-			return _react2.default.createElement(
-				_reactBootstrap.Carousel,
-				{ id: 'controlled-carousel', activeIndex: this.state.index, direction: this.state.direction, onSelect: this.handleSelect.bind(this) },
-				carouselItems
-			);
-		}
-	}]);
-
-	return ControlledCarousel;
-}(_react2.default.Component);
+function toCarouselItems(item, i) {
+	return _react2.default.createElement(
+		_reactBootstrap.Carousel.Item,
+		{ key: i },
+		_react2.default.createElement('img', { className: 'carousel-img', src: item.url }),
+		_react2.default.createElement(
+			_reactBootstrap.Carousel.Caption,
+			null,
+			_react2.default.createElement(
+				'h3',
+				null,
+				item.label
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				item.desc
+			)
+		)
+	);
+}
+function ControlledCarousel() {
+	var carouselItems = items.map(function (item, i) {
+		return toCarouselItems(item, i);
+	});
+	return _react2.default.createElement(
+		'div',
+		{ id: 'projects' },
+		_react2.default.createElement(
+			_reactBootstrap.Carousel,
+			{ id: 'controlled-carousel', controls: false, interval: 4000, pauseOnHover: false },
+			carouselItems
+		)
+	);
+}
 
 exports.default = ControlledCarousel;
 
-},{"react":439,"react-bootstrap":259}],449:[function(require,module,exports){
+},{"react":439,"react-bootstrap":259}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40950,7 +40923,37 @@ function Cover() {
 				_react2.default.createElement('span', { className: 'bar transparent' })
 			)
 		),
-		_react2.default.createElement('div', { id: 'menu', className: 'hidden' }),
+		_react2.default.createElement(
+			'div',
+			{ id: 'menu' },
+			_react2.default.createElement(
+				'ul',
+				null,
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ 'data-scroll': true, href: '#cover' },
+						'Home'
+					)
+				),
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ 'data-scroll': true, href: '#controlled-carousel' },
+						'Projects'
+					)
+				),
+				_react2.default.createElement(
+					'li',
+					null,
+					'About Me'
+				)
+			)
+		),
 		_react2.default.createElement(
 			'div',
 			{ id: 'cover' },
@@ -40979,4 +40982,4 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":439,"react-bootstrap":259}]},{},[446]);
+},{"react":439,"react-bootstrap":259}]},{},[447]);
