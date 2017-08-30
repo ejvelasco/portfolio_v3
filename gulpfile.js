@@ -8,7 +8,7 @@ const eslint = require('gulp-eslint');
 
 gulp.task('jsx', () => {
   return (
-    browserify('./public/jsx/components/app.jsx')
+    browserify('./public/jsx/app.jsx')
     .transform('babelify', {presets: ['es2015', 'react']})
     .bundle()
     .pipe(source('app.js'))
@@ -26,7 +26,8 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => { 
   livereload.listen();
-  gulp.watch('./public/jsx/**/*.jsx', ['jsx', 'lint'],);
+  gulp.watch('./public/js/**/*.js', ['jsx', 'lint'])
+  gulp.watch('./public/jsx/**/*.jsx', ['jsx', 'lint']);
   gulp.watch('./public/scss/*.scss', ['scss']);
 });
 
