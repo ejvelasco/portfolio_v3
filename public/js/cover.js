@@ -1,78 +1,23 @@
-import Rellax from 'rellax';
-import SmoothScroll from 'smooth-scroll';
-document.addEventListener("DOMContentLoaded", (event) => { 
-	const rellax = new Rellax('.rellax');
-	const scroll = new SmoothScroll('a[href*="#"]');
+function adjustBodyStyle() {
+	document.body.style.transition = '';
+}
+function onMouseMove(event) {
+	const X_OFF = Math.floor(SCROLL_INDEX * event.clientX) - MARGIN;
+	const Y_OFF = Math.floor(SCROLL_INDEX * event.clientY) - MARGIN;
+	document.body.style.backgroundPosition = `${X_OFF}px ${Y_OFF}px`;
+}
+
+function onMouseEnter(event) {
+	const BODY_STYLE_DELAY = 500;
+	document.body.style.transition = 'background .5s ease';
+	setTimeout(adjustBodyStyle, BODY_STYLE_DELAY);
+}
+
+function cover() {
 	const cover = document.getElementById('cover');
-	const carousel = document.getElementById('controlled-carousel');
-	const menuToggle = document.getElementById('menu-toggle');
-	let clicked = false;
-	const margin = 200;
-	const menu = document.getElementById('menu');
-	cover.addEventListener('mousemove', (event) => {
-		const x = Math.floor(.05 * event.clientX) - margin;
-		const y = Math.floor(.05 * event.clientY) - margin;
-		document.body.style.backgroundPosition = `${x}px ${y}px`;		
-	});
-	cover.addEventListener('mouseenter', (event) => {
-		document.body.style.transition = 'background .5s ease';
-		// console.log(document.body.style);
-		setTimeout(() => {
-			document.body.style.transition = '';
-		}, 500);
-	});
-	menuToggle.addEventListener('mouseenter', (event) => {
-		const shortBars = document.getElementsByClassName('short');
-		Object.keys(shortBars).forEach(() => {
-			shortBars[0]['className'] = 'bar'; 
-		});
-	});
-	menuToggle.addEventListener('mouseleave', (event) => {
-		if (!clicked) {
-			const bars = document.getElementsByClassName('bar');
-			Object.keys(bars).forEach((key) => {
-				if (key == 0 || key == 2) {
-					bars[key]['className'] = 'bar short';
-				} 
-				if (key == 1) {
-					bars[key]['className'] = 'bar';
-				}
-				if (key == 3) {
-					bars[key]['className'] = 'bar transparent';	
-				}
-			});
-		}
-	});
-	menuToggle.addEventListener('click', (event) => {
-		const bars = document.getElementsByClassName('bar');
-		if (!clicked) {
-			menu.style.marginLeft = '0%';
-			Object.keys(bars).forEach((key) => {
-				if (key == 0 || key == 2) {
-					bars[key]['className'] = 'bar transparent';
-				} 
-				if (key == 1) {
-					bars[key]['className'] = 'bar slant-left';
-				}
-				if (key == 3) {
-					bars[key]['className'] = 'bar slant-right';
-				}
-			});	
-		} else {
-			menu.style.marginLeft = '-100%';
-			Object.keys(bars).forEach((key) => {
-				if (key == 0 || key == 2) {
-					bars[key]['className'] = 'bar short';
-				} 
-				if (key == 1) {
-					bars[key]['className'] = 'bar';
-				}
-				if (key == 3) {
-					bars[key]['className'] = 'bar transparent';
-				}
-			});
-		}
-		
-		clicked = !clicked;
-	});
-});
+	const MARGIN = 200;
+	const SCROLL_INDEX = .05;
+	cover.addEventListener('mousemove', onMouseMove);
+	cover.addEventListener('mouseenter', onMouseEnter);
+}
+
