@@ -40681,6 +40681,44 @@ module.exports = warning;
 },{"_process":159}],446:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function adjustBodyStyle() {
+	document.body.style.transition = '';
+}
+
+function onMouseMove(event, SCROLL_INDEX, MARGIN) {
+	function cb(event) {
+		var X_OFF = Math.floor(SCROLL_INDEX * event.clientX) - MARGIN;
+		var Y_OFF = Math.floor(SCROLL_INDEX * event.clientY) - MARGIN;
+		document.body.style.backgroundPosition = X_OFF + 'px ' + Y_OFF + 'px';
+	}
+	return cb;
+}
+
+function onMouseEnter(event, BODY_STYLE_DELAY) {
+	function cb(event) {
+		document.body.style.transition = 'background .5s ease';
+		setTimeout(adjustBodyStyle, BODY_STYLE_DELAY);
+	}
+	return cb;
+}
+
+function cover() {
+	var cover = document.getElementById('cover');
+	var MARGIN = 200;
+	var SCROLL_INDEX = .05;
+	var BODY_STYLE_DELAY = 500;
+	cover.addEventListener('mousemove', onMouseMove(event, SCROLL_INDEX, MARGIN));
+	cover.addEventListener('mouseenter', onMouseEnter(event, BODY_STYLE_DELAY));
+}
+
+exports.default = cover;
+
+},{}],447:[function(require,module,exports){
+'use strict';
+
 var _rellax = require('rellax');
 
 var _rellax2 = _interopRequireDefault(_rellax);
@@ -40689,86 +40727,150 @@ var _smoothScroll = require('smooth-scroll');
 
 var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 
+var _menu = require('./menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+var _cover = require('./cover');
+
+var _cover2 = _interopRequireDefault(_cover);
+
+var _projects = require('./projects');
+
+var _projects2 = _interopRequireDefault(_projects);
+
+var _projectItems = require('./projectItems');
+
+var _projectItems2 = _interopRequireDefault(_projectItems);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
 	var rellax = new _rellax2.default('.rellax');
 	var scroll = new _smoothScroll2.default('a[href*="#"]');
-	var cover = document.getElementById('cover');
-	var carousel = document.getElementById('controlled-carousel');
-	var menuToggle = document.getElementById('menu-toggle');
-	var clicked = false;
-	var margin = 200;
-	var menu = document.getElementById('menu');
-	cover.addEventListener('mousemove', function (event) {
-		var x = Math.floor(.05 * event.clientX) - margin;
-		var y = Math.floor(.05 * event.clientY) - margin;
-		document.body.style.backgroundPosition = x + 'px ' + y + 'px';
-	});
-	cover.addEventListener('mouseenter', function (event) {
-		document.body.style.transition = 'background .5s ease';
-		// console.log(document.body.style);
-		setTimeout(function () {
-			document.body.style.transition = '';
-		}, 500);
-	});
-	menuToggle.addEventListener('mouseenter', function (event) {
-		var shortBars = document.getElementsByClassName('short');
+	(0, _menu2.default)();
+	(0, _cover2.default)();
+	(0, _projects2.default)();
+});
+
+},{"./cover":446,"./menu":448,"./projectItems":449,"./projects":450,"rellax":440,"smooth-scroll":441}],448:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function onMouseEnter(event, shortBars) {
+	function cb(event) {
 		Object.keys(shortBars).forEach(function () {
 			shortBars[0]['className'] = 'bar';
 		});
-	});
-	menuToggle.addEventListener('mouseleave', function (event) {
+	}
+	return cb;
+}
+
+function onMouseLeave(event, menu, bars) {
+	function cb(event) {
+		var clicked = menu.style.marginLeft === '0%';
 		if (!clicked) {
-			var bars = document.getElementsByClassName('bar');
 			Object.keys(bars).forEach(function (key) {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar short';
-				}
-				if (key == 1) {
+				} else if (key == 1) {
 					bars[key]['className'] = 'bar';
-				}
-				if (key == 3) {
+				} else if (key == 3) {
 					bars[key]['className'] = 'bar transparent';
 				}
 			});
 		}
-	});
-	menuToggle.addEventListener('click', function (event) {
-		var bars = document.getElementsByClassName('bar');
+	}
+	return cb;
+}
+
+function onClick(event, menu, bars, screen) {
+	function cb(event) {
+		var clicked = menu.style.marginLeft === '0%';
 		if (!clicked) {
+			screen.style.opacity = '0.7';
+			menu.style.opacity = '1';
 			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach(function (key) {
 				if (key == 0 || key == 2) {
 					bars[key]['className'] = 'bar transparent';
-				}
-				if (key == 1) {
+				} else if (key == 1) {
 					bars[key]['className'] = 'bar slant-left';
-				}
-				if (key == 3) {
+				} else if (key == 3) {
 					bars[key]['className'] = 'bar slant-right';
 				}
 			});
 		} else {
+			screen.style.opacity = '0';
 			menu.style.marginLeft = '-100%';
-			Object.keys(bars).forEach(function (key) {
-				if (key == 0 || key == 2) {
-					bars[key]['className'] = 'bar short';
-				}
-				if (key == 1) {
-					bars[key]['className'] = 'bar';
-				}
-				if (key == 3) {
-					bars[key]['className'] = 'bar transparent';
-				}
-			});
+			onMouseLeave(event, menu, bars)();
 		}
+	}
+	return cb;
+}
+function linkOnClick(event, menu, screen, bars) {
+	function cb(event) {
+		screen.style.opacity = '0';
+		menu.style.opacity = '0';
+		menu.style.marginLeft = '-100%';
+		onMouseLeave(event, menu, bars)();
+	}
+	return cb;
+}
 
-		clicked = !clicked;
+function menu() {
+	var menu = document.getElementById('menu');
+	var menuToggle = document.getElementById('menu-toggle');
+	var bars = document.getElementsByClassName('bar');
+	var screen = document.getElementById('screen');
+	var shortBars = document.getElementsByClassName('short');
+	var menuLinks = document.getElementsByClassName('menu-link');
+	menuToggle.addEventListener('click', onClick(event, menu, bars, screen));
+	menuToggle.addEventListener('mouseenter', onMouseEnter(event, shortBars));
+	menuToggle.addEventListener('mouseleave', onMouseLeave(event, menu, bars));
+	screen.addEventListener('click', onClick(event, menu, bars, screen));
+	Object.keys(menuLinks).forEach(function (key) {
+		menuLinks[key].addEventListener('click', linkOnClick(event, menu, screen, bars));
 	});
-});
+}
 
-},{"rellax":440,"smooth-scroll":441}],447:[function(require,module,exports){
+exports.default = menu;
+
+},{}],449:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var projectItems = [{
+	label: 'First Label',
+	desc: 'Some cool stuff',
+	url: '/img/hummingbird.jpg'
+}, {
+	label: 'Second Label',
+	desc: 'Some more cool stuff',
+	url: '/img/hummingbird.jpg'
+}, {
+	label: 'Third Label',
+	desc: 'Last cool stuff',
+	url: '/img/hummingbird.jpg'
+}];
+
+exports.default = projectItems;
+
+},{}],450:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function projects() {}
+
+exports.default = projects;
+
+},{}],451:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -40783,17 +40885,13 @@ var _App = require('./components/App.jsx');
 
 var _App2 = _interopRequireDefault(_App);
 
-var _rellax = require('rellax');
-
-var _rellax2 = _interopRequireDefault(_rellax);
-
-require('../js/cover.js');
+require('../js/index.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/cover.js":446,"./components/App.jsx":448,"react":439,"react-dom":270,"rellax":440}],448:[function(require,module,exports){
+},{"../js/index.js":447,"./components/App.jsx":452,"react":439,"react-dom":270}],452:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40804,13 +40902,21 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ControlledCarousel = require('./ControlledCarousel.jsx');
-
-var _ControlledCarousel2 = _interopRequireDefault(_ControlledCarousel);
-
 var _Cover = require('./Cover.jsx');
 
 var _Cover2 = _interopRequireDefault(_Cover);
+
+var _MenuToggle = require('./MenuToggle.jsx');
+
+var _MenuToggle2 = _interopRequireDefault(_MenuToggle);
+
+var _Menu = require('./Menu.jsx');
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+var _Projects = require('./Projects.jsx');
+
+var _Projects2 = _interopRequireDefault(_Projects);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40818,14 +40924,17 @@ function App() {
 	return _react2.default.createElement(
 		'div',
 		null,
+		_react2.default.createElement(_MenuToggle2.default, null),
+		_react2.default.createElement(_Menu2.default, null),
 		_react2.default.createElement(_Cover2.default, null),
-		_react2.default.createElement(_ControlledCarousel2.default, null)
+		_react2.default.createElement(_Projects2.default, null),
+		_react2.default.createElement('div', { id: 'screen' })
 	);
 }
 
 exports.default = App;
 
-},{"./ControlledCarousel.jsx":449,"./Cover.jsx":450,"react":439}],449:[function(require,module,exports){
+},{"./Cover.jsx":454,"./Menu.jsx":455,"./MenuToggle.jsx":456,"./Projects.jsx":457,"react":439}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40838,27 +40947,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = require('react-bootstrap');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _projectItems = require('../../js/projectItems');
 
-var items = [{
-	label: 'First Label',
-	desc: 'Some cool stuff',
-	url: '/img/hummingbird.jpg'
-}, {
-	label: 'Second Label',
-	desc: 'Some more cool stuff',
-	url: '/img/hummingbird.jpg'
-}, {
-	label: 'Third Label',
-	desc: 'Last cool stuff',
-	url: '/img/hummingbird.jpg'
-}];
+var _projectItems2 = _interopRequireDefault(_projectItems);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function toCarouselItems(item, i) {
 	return _react2.default.createElement(
 		_reactBootstrap.Carousel.Item,
 		{ key: i },
-		_react2.default.createElement('img', { className: 'carousel-img', src: item.url }),
+		_react2.default.createElement(_reactBootstrap.Image, { className: 'carousel-img', src: item['url'], responsive: true }),
 		_react2.default.createElement(
 			_reactBootstrap.Carousel.Caption,
 			null,
@@ -40876,23 +40975,19 @@ function toCarouselItems(item, i) {
 	);
 }
 function ControlledCarousel() {
-	var carouselItems = items.map(function (item, i) {
+	var carouselItems = _projectItems2.default.map(function (item, i) {
 		return toCarouselItems(item, i);
 	});
 	return _react2.default.createElement(
-		'div',
-		{ id: 'projects' },
-		_react2.default.createElement(
-			_reactBootstrap.Carousel,
-			{ id: 'controlled-carousel', controls: false, interval: 4000, pauseOnHover: false },
-			carouselItems
-		)
+		_reactBootstrap.Carousel,
+		{ id: 'controlled-carousel', controls: false, interval: 4000, pauseOnHover: false },
+		carouselItems
 	);
 }
 
 exports.default = ControlledCarousel;
 
-},{"react":439,"react-bootstrap":259}],450:[function(require,module,exports){
+},{"../../js/projectItems":449,"react":439,"react-bootstrap":259}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40903,57 +40998,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactBootstrap = require('react-bootstrap');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Cover() {
 	return _react2.default.createElement(
 		'div',
 		null,
-		_react2.default.createElement(
-			'span',
-			{ id: 'menu-toggle' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'bar-container' },
-				_react2.default.createElement('span', { className: 'bar short' }),
-				_react2.default.createElement('span', { className: 'bar' }),
-				_react2.default.createElement('span', { className: 'bar short' }),
-				_react2.default.createElement('span', { className: 'bar transparent' })
-			)
-		),
-		_react2.default.createElement(
-			'div',
-			{ id: 'menu' },
-			_react2.default.createElement(
-				'ul',
-				null,
-				_react2.default.createElement(
-					'li',
-					null,
-					_react2.default.createElement(
-						'a',
-						{ 'data-scroll': true, href: '#cover' },
-						'Home'
-					)
-				),
-				_react2.default.createElement(
-					'li',
-					null,
-					_react2.default.createElement(
-						'a',
-						{ 'data-scroll': true, href: '#controlled-carousel' },
-						'Projects'
-					)
-				),
-				_react2.default.createElement(
-					'li',
-					null,
-					'About Me'
-				)
-			)
-		),
 		_react2.default.createElement(
 			'div',
 			{ id: 'cover' },
@@ -40982,4 +41032,105 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":439,"react-bootstrap":259}]},{},[447]);
+},{"react":439}],455:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Menu() {
+	return _react2.default.createElement(
+		'div',
+		{ id: 'menu' },
+		_react2.default.createElement(
+			'ul',
+			null,
+			_react2.default.createElement(
+				'li',
+				null,
+				_react2.default.createElement(
+					'a',
+					{ 'data-scroll': true, href: '#cover', className: 'menu-link' },
+					'Home'
+				)
+			),
+			_react2.default.createElement(
+				'li',
+				null,
+				_react2.default.createElement(
+					'a',
+					{ 'data-scroll': true, href: '#controlled-carousel', className: 'menu-link' },
+					'Projects'
+				)
+			)
+		)
+	);
+}
+
+exports.default = Menu;
+
+},{"react":439}],456:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function MenuToggle() {
+	return _react2.default.createElement(
+		'span',
+		{ id: 'menu-toggle' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'bar-container' },
+			_react2.default.createElement('span', { className: 'bar short' }),
+			_react2.default.createElement('span', { className: 'bar' }),
+			_react2.default.createElement('span', { className: 'bar short' }),
+			_react2.default.createElement('span', { className: 'bar transparent' })
+		)
+	);
+}
+
+exports.default = MenuToggle;
+
+},{"react":439}],457:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ControlledCarousel = require('./ControlledCarousel.jsx');
+
+var _ControlledCarousel2 = _interopRequireDefault(_ControlledCarousel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Projects() {
+	return _react2.default.createElement(
+		'div',
+		{ id: 'projects' },
+		_react2.default.createElement(_ControlledCarousel2.default, null)
+	);
+}
+
+exports.default = Projects;
+
+},{"./ControlledCarousel.jsx":453,"react":439}]},{},[451]);

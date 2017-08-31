@@ -25,10 +25,12 @@ function onMouseLeave(event, menu, bars) {
 	return cb;
 }
 
-function onClick(event, menu, bars) {
+function onClick(event, menu, bars, screen) {
 	function cb(event) {
-		const clicked = menu.style.marginLeft === '0%'
+		const clicked = menu.style.marginLeft === '0%';
 		if (!clicked) {
+			screen.style.opacity = '0.7';
+			menu.style.opacity = '1';
 			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach((key) => {
 				if (key == 0 || key == 2) {
@@ -41,9 +43,19 @@ function onClick(event, menu, bars) {
 			});	
 		} 
 		else {
+			screen.style.opacity = '0';
 			menu.style.marginLeft = '-100%';
 			onMouseLeave(event, menu, bars)();
 		}
+	}
+	return cb;
+}
+function linkOnClick(event, menu, screen, bars) {
+	function cb(event) {
+		screen.style.opacity = '0';
+		menu.style.opacity = '0';
+		menu.style.marginLeft = '-100%';
+		onMouseLeave(event, menu, bars)();
 	}
 	return cb;
 }
@@ -52,10 +64,16 @@ function menu() {
 	const menu = document.getElementById('menu');
 	const menuToggle = document.getElementById('menu-toggle');
 	const bars = document.getElementsByClassName('bar');
+	const screen = document.getElementById('screen');
 	const shortBars = document.getElementsByClassName('short');
-	menuToggle.addEventListener('click', onClick(event, menu, bars));
+	const menuLinks = document.getElementsByClassName('menu-link');
+	menuToggle.addEventListener('click', onClick(event, menu, bars, screen));
 	menuToggle.addEventListener('mouseenter', onMouseEnter(event, shortBars));
 	menuToggle.addEventListener('mouseleave', onMouseLeave(event, menu, bars));
+	screen.addEventListener('click', onClick(event, menu, bars, screen));
+	Object.keys(menuLinks).forEach((key) => {
+		menuLinks[key].addEventListener('click', linkOnClick(event, menu, screen, bars));
+	});
 }
 
 export default menu;
