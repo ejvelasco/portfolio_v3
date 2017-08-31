@@ -1,28 +1,11 @@
 import React from 'react';
-import {Carousel, Glyphicon} from 'react-bootstrap'; 
-
-const items = [
-	{
-		label: 'First Label',
-		desc: 'Some cool stuff',
-		url: '/img/hummingbird.jpg'
-	},
-	{
-		label: 'Second Label',
-		desc: 'Some more cool stuff',
-		url: '/img/hummingbird.jpg'
-	},
-	{
-		label: 'Third Label',
-		desc: 'Last cool stuff',
-		url: '/img/hummingbird.jpg'
-	},
-];
+import {Carousel, Glyphicon, Image} from 'react-bootstrap'; 
+import projectItems from '../../js/projectItems';
 
 function toCarouselItems(item, i) {
 	return (
 		<Carousel.Item key = {i}>
-			<img className='carousel-img' src= {item.url}/>
+			<Image className='carousel-img' src={item['url']} responsive />
 			<Carousel.Caption>
 				<h3>{item.label}</h3>
 				<p>{item.desc}</p>
@@ -31,13 +14,11 @@ function toCarouselItems(item, i) {
 	);
 }
 function ControlledCarousel() {
-	const carouselItems = items.map((item, i) => toCarouselItems(item, i)); 
+	const carouselItems = projectItems.map((item, i) => toCarouselItems(item, i)); 
 	return (
-		<div id='projects'>
-			<Carousel id='controlled-carousel' controls={false} interval={4000} pauseOnHover={false}>
-				{carouselItems}
-			</Carousel>
-		</div>
+		<Carousel id='controlled-carousel' controls={false} interval={4000} pauseOnHover={false}>
+			{carouselItems}
+		</Carousel>
 	);
 }
 

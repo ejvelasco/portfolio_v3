@@ -1,11 +1,18 @@
 import React from 'react';
-import ControlledCarousel from './ControlledCarousel.jsx';
 import Cover from './Cover.jsx';
+import MenuToggle from './MenuToggle.jsx';
+import Menu from './Menu.jsx';
+import Projects from './Projects.jsx';
+
 function App() {
 	return (
 		<div>
+			<MenuToggle />
+			<Menu />			
 			<Cover />
-			<ControlledCarousel />
+			<Projects />
+			<div id ='screen'>
+			</div>
 		</div>
 	);
 }
