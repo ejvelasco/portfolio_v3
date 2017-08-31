@@ -30,6 +30,7 @@ function onClick(event, menu, bars, screen) {
 		const clicked = menu.style.marginLeft === '0%';
 		if (!clicked && event.target.getAttribute('id') !== 'screen') {
 			screen.style.opacity = '.7';
+			menu.style.opacity = '1';
 			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach((key) => {
 				if (key == 0 || key == 2) {
