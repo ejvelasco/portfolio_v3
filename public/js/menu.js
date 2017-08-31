@@ -28,9 +28,8 @@ function onMouseLeave(event, menu, bars) {
 function onClick(event, menu, bars, screen) {
 	function cb(event) {
 		const clicked = menu.style.marginLeft === '0%';
-		if (!clicked) {
-			screen.style.opacity = '0.7';
-			menu.style.opacity = '1';
+		if (!clicked && event.target.getAttribute('id') !== 'screen') {
+			screen.style.opacity = '.7';
 			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach((key) => {
 				if (key == 0 || key == 2) {
@@ -52,7 +51,6 @@ function onClick(event, menu, bars, screen) {
 }
 function linkOnClick(event, menu, screen, bars) {
 	function cb(event) {
-		screen.style.opacity = '0';
 		menu.style.opacity = '0';
 		menu.style.marginLeft = '-100%';
 		onMouseLeave(event, menu, bars)();

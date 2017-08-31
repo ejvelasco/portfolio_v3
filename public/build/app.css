@@ -175,12 +175,12 @@ a {
 #screen {
   position: fixed;
   top: 0;
-  opacity: 0;
   height: 100%;
   width: 100%;
+  opacity: 0;
   background-color: #053D6E;
   z-index: 9997;
-  transition: all .3s ease-in-out; }
+  transition: all .4s ease-in-out; }
 
 @media screen and (max-width: 500px) {
   .greeting {
