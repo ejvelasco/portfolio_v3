@@ -34,7 +34,7 @@ function ProjectGrid() {
 		}
 	});
 	return (
-		<Grid>
+		<Grid id='grid'>
 			{projectRows}
 		</Grid>
 	);

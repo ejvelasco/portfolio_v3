@@ -6,6 +6,8 @@ function Menu() {
 			<ul>
 				<li><a data-scroll href="#cover" className='menu-link'>Home</a></li>
 				<li><a data-scroll href="#controlled-carousel" className='menu-link'>Projects</a></li>
+				<li><a data-scroll href="#controlled-carousel" className='menu-link'>About</a></li>
+				<li><a data-scroll href="#controlled-carousel" className='menu-link'>Contact</a></li>
 			</ul>
 		</div>
 	);
