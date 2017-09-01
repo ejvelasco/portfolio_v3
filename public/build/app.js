@@ -40958,7 +40958,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":449,"./components/App.jsx":454,"react":440,"react-dom":271}],454:[function(require,module,exports){
+},{"../js/index.js":449,"./components/App.jsx":455,"react":440,"react-dom":271}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40968,6 +40968,37 @@ Object.defineProperty(exports, "__esModule", {
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function About() {
+	return _react2.default.createElement(
+		'div',
+		{ id: 'about' },
+		_react2.default.createElement(
+			'p',
+			{ className: 'heading' },
+			'More About Me'
+		)
+	);
+}
+
+exports.default = About;
+
+},{"react":440}],455:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _About = require('./About.jsx');
+
+var _About2 = _interopRequireDefault(_About);
 
 var _Cover = require('./Cover.jsx');
 
@@ -40995,13 +41026,14 @@ function App() {
 		_react2.default.createElement(_Menu2.default, null),
 		_react2.default.createElement(_Cover2.default, null),
 		_react2.default.createElement(_Projects2.default, null),
+		_react2.default.createElement(_About2.default, null),
 		_react2.default.createElement('div', { id: 'screen' })
 	);
 }
 
 exports.default = App;
 
-},{"./Cover.jsx":456,"./Menu.jsx":457,"./MenuToggle.jsx":458,"./Projects.jsx":460,"react":440}],455:[function(require,module,exports){
+},{"./About.jsx":454,"./Cover.jsx":457,"./Menu.jsx":458,"./MenuToggle.jsx":459,"./Projects.jsx":461,"react":440}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41054,7 +41086,7 @@ function ControlledCarousel() {
 
 exports.default = ControlledCarousel;
 
-},{"../../js/carouselItems":447,"react":440,"react-bootstrap":260}],456:[function(require,module,exports){
+},{"../../js/carouselItems":447,"react":440,"react-bootstrap":260}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41099,7 +41131,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":440}],457:[function(require,module,exports){
+},{"react":440}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41161,7 +41193,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":440}],458:[function(require,module,exports){
+},{"react":440}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41191,7 +41223,7 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":440}],459:[function(require,module,exports){
+},{"react":440}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41262,7 +41294,7 @@ function ProjectGrid() {
 
 exports.default = ProjectGrid;
 
-},{"../../js/projectItems":451,"react":440,"react-bootstrap":260}],460:[function(require,module,exports){
+},{"../../js/projectItems":451,"react":440,"react-bootstrap":260}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41294,4 +41326,4 @@ function Projects() {
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":455,"./ProjectGrid.jsx":459,"react":440}]},{},[453]);
+},{"./ControlledCarousel.jsx":456,"./ProjectGrid.jsx":460,"react":440}]},{},[453]);

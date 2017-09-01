@@ -11,12 +11,11 @@ body {
 #projects {
 	padding-left: 30px !important;
 	padding-right: 30px !important;
-	padding-bottom: 200px !important;
 }
 .carousel-img {
 	margin: 0 auto !important;
 }
-#cover {
+#cover, #about {
 	position: relative;
 	height: 100%;
 	width: 100%;	
@@ -208,13 +207,14 @@ a {
 	left: 0;
 	border: none !important;
 	padding: 0 !important;
-	background-color: transparentize(white, .75);
+	background-color: transparent;
+	background-color: transparentize(white, .8);
 	box-shadow: 5px 5px 20px transparentize(black, .7);
 	transition: all .2s ease-in-out;
 	&:hover {
 		left: -10px;
 		top: -10px;
-		box-shadow: 3px 3px 10px transparentize(white, .3);
+		box-shadow: 3px 3px 20px transparentize(white, .5);
 	}
 }
 .thumbnail .caption {
@@ -227,10 +227,13 @@ a {
 .thumbnail .caption h3 {
 	font-size: 20px !important;
 	font-weight: bold;
-	color: transparentize(white, .5) !important;
+	color: transparentize(white, .4) !important;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 #grid {
 	padding-top: 100px !important;
+}
+#about {
+
 }
