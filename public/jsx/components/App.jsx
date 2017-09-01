@@ -4,6 +4,7 @@ import Cover from './Cover.jsx';
 import MenuToggle from './MenuToggle.jsx';
 import Menu from './Menu.jsx';
 import Projects from './Projects.jsx';
+import Contact from './Contact.jsx';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<Cover />
 			<Projects />
 			<About />
+			<Contact />
 			<div id ='screen'>
 			</div>
 		</div>

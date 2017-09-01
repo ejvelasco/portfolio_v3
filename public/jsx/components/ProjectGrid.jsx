@@ -4,7 +4,7 @@ import projectItems from '../../js/projectItems';
 
 function toThumb(item, i) {
 	return (
-		<Col xs={10} sm={10} md={6} key={i}>
+		<Col xs={10} sm={10} md={4} key={i}>
 			<Thumbnail src={item['img']} alt="242x200">
 			  <h3>{item['title']}</h3>
 			  <p>{item['subtitle']}</p>

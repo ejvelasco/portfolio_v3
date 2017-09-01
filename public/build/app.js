@@ -40687,6 +40687,35 @@ module.exports = warning;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var aboutItems = [{
+	title: 'Power',
+	img: '/img/power.png'
+}, {
+	title: 'To',
+	img: '/img/10.png'
+}, {
+	title: 'Code',
+	img: '/img/code.png'
+}];
+
+exports.default = aboutItems;
+
+},{}],448:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var aboutTextItems = ['I\'m a twenty-three year old programmer living in Austin, Texas. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I am all about a hands-on approach to development.', 'Don\'t let my portfolio fool you into thinking I\'m only about coding! It is my fascination with Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. When I\'m away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.', 'I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps based on Meteor, Angular, and React. I am comfortable implementing robust unit tests with frameworks like Mocha or Jest. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.', 'I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. Lately, I\'ve been focused on learning Python! It\'s simple, powerful, and boasts awesome Machine Learning libraries like Tensorflow.'];
+
+exports.default = aboutTextItems;
+
+},{}],449:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 var carouselItems = [{
 	label: 'First Label',
 	desc: 'Some cool stuff',
@@ -40703,7 +40732,7 @@ var carouselItems = [{
 
 exports.default = carouselItems;
 
-},{}],448:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40742,7 +40771,7 @@ function cover() {
 
 exports.default = cover;
 
-},{}],449:[function(require,module,exports){
+},{}],451:[function(require,module,exports){
 'use strict';
 
 var _rellax = require('rellax');
@@ -40780,7 +40809,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	(0, _projects2.default)();
 });
 
-},{"./cover":448,"./menu":450,"./projects":452,"aos":1,"rellax":441,"smooth-scroll":442}],450:[function(require,module,exports){
+},{"./cover":450,"./menu":452,"./projects":454,"aos":1,"rellax":441,"smooth-scroll":442}],452:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40868,7 +40897,7 @@ function menu() {
 
 exports.default = menu;
 
-},{}],451:[function(require,module,exports){
+},{}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40926,7 +40955,7 @@ var projectItems = [{
 
 exports.default = projectItems;
 
-},{}],452:[function(require,module,exports){
+},{}],454:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40937,7 +40966,7 @@ function projects() {}
 
 exports.default = projects;
 
-},{}],453:[function(require,module,exports){
+},{}],455:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -40958,7 +40987,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":449,"./components/App.jsx":455,"react":440,"react-dom":271}],454:[function(require,module,exports){
+},{"../js/index.js":451,"./components/App.jsx":457,"react":440,"react-dom":271}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40969,23 +40998,75 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactBootstrap = require('react-bootstrap');
+
+var _aboutTextItems = require('../../js/aboutTextItems');
+
+var _aboutTextItems2 = _interopRequireDefault(_aboutTextItems);
+
+var _aboutItems = require('../../js/aboutItems');
+
+var _aboutItems2 = _interopRequireDefault(_aboutItems);
+
+var _Contact = require('./Contact.jsx');
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function toParagraph(item, i) {
+	return _react2.default.createElement(
+		'p',
+		{ className: 'about-info', key: i },
+		item
+	);
+}
+
+function toThumb(item, i) {
+	return _react2.default.createElement(
+		_reactBootstrap.Col,
+		{ xs: 10, sm: 10, md: 4, key: i },
+		_react2.default.createElement('img', { className: 'about-img', src: item['img'] })
+	);
+}
+
 function About() {
+	var aboutParagraphs = _aboutTextItems2.default.map(function (item, i) {
+		return toParagraph(item, i);
+	});
+	var aboutThumbs = _aboutItems2.default.map(function (item, i) {
+		return toThumb(item, i);
+	});
 	return _react2.default.createElement(
 		'div',
-		{ id: 'about' },
+		null,
 		_react2.default.createElement(
-			'p',
-			{ className: 'heading' },
-			'More About Me'
+			'div',
+			{ id: 'about', className: 'tab' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'tab-bar' },
+				_react2.default.createElement('div', { className: 'icon red' }),
+				_react2.default.createElement('div', { className: 'icon yellow' }),
+				_react2.default.createElement('div', { className: 'icon green' })
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'about-content' },
+				_react2.default.createElement(
+					'p',
+					{ className: 'about-heading' },
+					'About Me'
+				),
+				aboutParagraphs
+			)
 		)
 	);
 }
 
 exports.default = About;
 
-},{"react":440}],455:[function(require,module,exports){
+},{"../../js/aboutItems":447,"../../js/aboutTextItems":448,"./Contact.jsx":458,"react":440,"react-bootstrap":260}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41016,6 +41097,10 @@ var _Projects = require('./Projects.jsx');
 
 var _Projects2 = _interopRequireDefault(_Projects);
 
+var _Contact = require('./Contact.jsx');
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -41027,13 +41112,59 @@ function App() {
 		_react2.default.createElement(_Cover2.default, null),
 		_react2.default.createElement(_Projects2.default, null),
 		_react2.default.createElement(_About2.default, null),
+		_react2.default.createElement(_Contact2.default, null),
 		_react2.default.createElement('div', { id: 'screen' })
 	);
 }
 
 exports.default = App;
 
-},{"./About.jsx":454,"./Cover.jsx":457,"./Menu.jsx":458,"./MenuToggle.jsx":459,"./Projects.jsx":461,"react":440}],456:[function(require,module,exports){
+},{"./About.jsx":456,"./Contact.jsx":458,"./Cover.jsx":460,"./Menu.jsx":461,"./MenuToggle.jsx":462,"./Projects.jsx":464,"react":440}],458:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Contact() {
+	return _react2.default.createElement(
+		'div',
+		{ id: 'contact', className: 'tab' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'tab-bar' },
+			_react2.default.createElement('div', { className: 'icon red' }),
+			_react2.default.createElement('div', { className: 'icon yellow' }),
+			_react2.default.createElement('div', { className: 'icon green' })
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'about-content' },
+			_react2.default.createElement(
+				'p',
+				{ className: 'about-heading' },
+				' Let\'s build something'
+			),
+			_react2.default.createElement(
+				'form',
+				null,
+				_react2.default.createElement('input', { placeholder: 'Name' }),
+				_react2.default.createElement('input', { placeholder: 'Email' }),
+				_react2.default.createElement('textarea', { placeholder: 'Message', rows: '8' })
+			)
+		)
+	);
+}
+
+exports.default = Contact;
+
+},{"react":440}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41086,7 +41217,7 @@ function ControlledCarousel() {
 
 exports.default = ControlledCarousel;
 
-},{"../../js/carouselItems":447,"react":440,"react-bootstrap":260}],457:[function(require,module,exports){
+},{"../../js/carouselItems":449,"react":440,"react-bootstrap":260}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41131,7 +41262,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":440}],458:[function(require,module,exports){
+},{"react":440}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41193,7 +41324,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":440}],459:[function(require,module,exports){
+},{"react":440}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41223,7 +41354,7 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":440}],460:[function(require,module,exports){
+},{"react":440}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41245,7 +41376,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function toThumb(item, i) {
 	return _react2.default.createElement(
 		_reactBootstrap.Col,
-		{ xs: 10, sm: 10, md: 6, key: i },
+		{ xs: 10, sm: 10, md: 4, key: i },
 		_react2.default.createElement(
 			_reactBootstrap.Thumbnail,
 			{ src: item['img'], alt: '242x200' },
@@ -41294,7 +41425,7 @@ function ProjectGrid() {
 
 exports.default = ProjectGrid;
 
-},{"../../js/projectItems":451,"react":440,"react-bootstrap":260}],461:[function(require,module,exports){
+},{"../../js/projectItems":453,"react":440,"react-bootstrap":260}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41326,4 +41457,4 @@ function Projects() {
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":456,"./ProjectGrid.jsx":460,"react":440}]},{},[453]);
+},{"./ControlledCarousel.jsx":459,"./ProjectGrid.jsx":463,"react":440}]},{},[455]);
