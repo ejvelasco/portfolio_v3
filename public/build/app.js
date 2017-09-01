@@ -41296,7 +41296,7 @@ function Menu() {
 				null,
 				_react2.default.createElement(
 					'a',
-					{ 'data-scroll': true, href: '#controlled-carousel', className: 'menu-link' },
+					{ 'data-scroll': true, href: '#projects', className: 'menu-link' },
 					'Projects'
 				)
 			),
@@ -41305,7 +41305,7 @@ function Menu() {
 				null,
 				_react2.default.createElement(
 					'a',
-					{ 'data-scroll': true, href: '#controlled-carousel', className: 'menu-link' },
+					{ 'data-scroll': true, href: '#about', className: 'menu-link' },
 					'About'
 				)
 			),
@@ -41314,7 +41314,7 @@ function Menu() {
 				null,
 				_react2.default.createElement(
 					'a',
-					{ 'data-scroll': true, href: '#controlled-carousel', className: 'menu-link' },
+					{ 'data-scroll': true, href: '#contact', className: 'menu-link' },
 					'Contact'
 				)
 			)

@@ -40,7 +40,7 @@ body {
 	z-index: 9998;
 	margin-left: -100%;
 	transition: all .4s ease-in-out;
-	background-color: transparentize(white, .8);
+	background-color: lighten(#002447, 5%);
 	font-family: 'Lato', sans-serif;
 	cursor: pointer;
 	&:hover {
@@ -188,7 +188,7 @@ a {
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	background-color: #002447;
+	background-color: darken(#002447, 5%);
 	z-index: -1;
 	transition: all .4s ease-in-out;
 }
