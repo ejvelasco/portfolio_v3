@@ -9,7 +9,7 @@ body {
 	background-attachment: fixed;
 }
 #projects {
-	background-color: transparentize(white, .75);
+	// background-color: transparentize(white, .75);
 }
 .carousel-img {
 	margin: 0 auto !important;
@@ -29,6 +29,7 @@ body {
 	z-index: 9999;
 	background-color: transparentize(white, .7);
 	cursor: pointer;
+	box-shadow: 3px 3px 15px transparentize(black, .6);
 }
 #menu {
 	position: fixed;
@@ -68,6 +69,7 @@ a {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	transition: all .3s ease-in-out;
+	box-shadow: 3px 3px 15px transparentize(black, .6);
 	&:hover {
 		background-color: transparentize(white, .5);
 	}
@@ -184,11 +186,39 @@ a {
 	width: 100%;
 	opacity: 0;
 	background-color: #053D6E;
-	z-index: 9997;
+	z-index: -1;
 	transition: all .4s ease-in-out;
 }
 @media screen and (max-width: 500px) {
 	.greeting {
 		font-size: 30px !important;
 	}
+}
+
+.thumbnail {
+	cursor: pointer !important;
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 40px;
+	font-size: 15px;
+	border: none !important;
+	padding: 0 !important;
+	background-color: transparentize(white, .7);
+	box-shadow: 5px 5px 20px transparentize(black, .7);
+	transition: all .2s ease-in-out;
+	&:hover {
+		box-shadow: 3px 3px 10px transparentize(white, .4);
+	}
+}
+.thumbnail .caption {
+	padding-left: 20px;
+}
+.thumbnail .caption p {
+	color: white !important;
+	font-weight: bold;
+}
+.thumbnail .caption h3 {
+	font-size: 20px !important;
+	color: white !important;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }

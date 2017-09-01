@@ -40684,6 +40684,28 @@ module.exports = warning;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var carouselItems = [{
+	label: 'First Label',
+	desc: 'Some cool stuff',
+	url: '/img/hummingbird.jpg'
+}, {
+	label: 'Second Label',
+	desc: 'Some more cool stuff',
+	url: '/img/hummingbird.jpg'
+}, {
+	label: 'Third Label',
+	desc: 'Last cool stuff',
+	url: '/img/hummingbird.jpg'
+}];
+
+exports.default = carouselItems;
+
+},{}],447:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 function adjustBodyStyle() {
 	document.body.style.transition = '';
 }
@@ -40707,6 +40729,7 @@ function onMouseEnter(event, BODY_STYLE_DELAY) {
 
 function cover() {
 	var cover = document.getElementById('cover');
+	var projects = document.getElementById('projects');
 	var MARGIN = 200;
 	var SCROLL_INDEX = .05;
 	var BODY_STYLE_DELAY = 500;
@@ -40716,7 +40739,7 @@ function cover() {
 
 exports.default = cover;
 
-},{}],447:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 'use strict';
 
 var _rellax = require('rellax');
@@ -40739,10 +40762,6 @@ var _projects = require('./projects');
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _projectItems = require('./projectItems');
-
-var _projectItems2 = _interopRequireDefault(_projectItems);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -40753,7 +40772,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	(0, _projects2.default)();
 });
 
-},{"./cover":446,"./menu":448,"./projectItems":449,"./projects":450,"rellax":440,"smooth-scroll":441}],448:[function(require,module,exports){
+},{"./cover":447,"./menu":449,"./projects":451,"rellax":440,"smooth-scroll":441}],449:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40791,6 +40810,7 @@ function onClick(event, menu, bars, screen) {
 		var clicked = menu.style.marginLeft === '0%';
 		if (!clicked && event.target.getAttribute('id') !== 'screen') {
 			screen.style.opacity = '.7';
+			screen.style.zIndex = '9997';
 			menu.style.opacity = '1';
 			menu.style.marginLeft = '0%';
 			Object.keys(bars).forEach(function (key) {
@@ -40804,6 +40824,7 @@ function onClick(event, menu, bars, screen) {
 			});
 		} else {
 			screen.style.opacity = '0';
+			screen.style.zIndex = '-1';
 			menu.style.marginLeft = '-100%';
 			onMouseLeave(event, menu, bars)();
 		}
@@ -40813,6 +40834,7 @@ function onClick(event, menu, bars, screen) {
 function linkOnClick(event, menu, screen, bars) {
 	function cb(event) {
 		screen.style.opacity = '0';
+		screen.style.zIndex = '-1';
 		menu.style.opacity = '0';
 		menu.style.marginLeft = '-100%';
 		onMouseLeave(event, menu, bars)();
@@ -40838,29 +40860,65 @@ function menu() {
 
 exports.default = menu;
 
-},{}],449:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var projectItems = [{
-	label: 'First Label',
-	desc: 'Some cool stuff',
-	url: '/img/hummingbird.jpg'
+	title: 'Hummingbird',
+	subtitle: 'Enriching the classroom environment.',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/hummingbird_dashboard',
+	tech: 'Meteor, MongoDB, Blaze.'
 }, {
-	label: 'Second Label',
-	desc: 'Some more cool stuff',
-	url: '/img/hummingbird.jpg'
+	title: 'TCP Fun',
+	subtitle: 'A concise TCP project.',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/tcp_client',
+	tech: 'Node, ES6.'
 }, {
-	label: 'Third Label',
-	desc: 'Last cool stuff',
-	url: '/img/hummingbird.jpg'
+	title: 'ESplay',
+	subtitle: 'A sleek ES6 playground.',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/ESplay',
+	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
+}, {
+	title: 'SharedFi - Sofía',
+	subtitle: 'A friendly Shopping Assistant (Private).',
+	img: '/img/placeholder.jpg',
+	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
+	tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
+}, {
+	title: 'SharedFi - Portal',
+	subtitle: 'Next-gen targeted advertising. (Private)',
+	img: '/img/placeholder.jpg',
+	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
+	tech: 'MongoDB, Express, Angular, Node, Pug, Bootstrap.'
+}, {
+	title: 'Portfolio',
+	subtitle: 'Like it? Check out the code.',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/portfolio_v2',
+	tech: 'Node, Express, jQuery, Pug, SASS, Bootstrap.'
+}, {
+	title: 'cBioPortal',
+	subtitle: 'Cancer genomics initiative at MSK (Internship).',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/cbioportal',
+	tech: 'D3.js, jQuery.'
+}, {
+	title: 'EasyTopo',
+	subtitle: 'Brain imaging simplified.',
+	img: '/img/placeholder.jpg',
+	url: 'https://github.com/velascoDev/EasyTopo',
+	tech: 'MATLAB, FNIRS.'
 }];
 
 exports.default = projectItems;
 
-},{}],450:[function(require,module,exports){
+},{}],451:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40870,7 +40928,7 @@ function projects() {}
 
 exports.default = projects;
 
-},{}],451:[function(require,module,exports){
+},{}],452:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -40891,7 +40949,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":447,"./components/App.jsx":452,"react":439,"react-dom":270}],452:[function(require,module,exports){
+},{"../js/index.js":448,"./components/App.jsx":453,"react":439,"react-dom":270}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40934,7 +40992,7 @@ function App() {
 
 exports.default = App;
 
-},{"./Cover.jsx":454,"./Menu.jsx":455,"./MenuToggle.jsx":456,"./Projects.jsx":457,"react":439}],453:[function(require,module,exports){
+},{"./Cover.jsx":455,"./Menu.jsx":456,"./MenuToggle.jsx":457,"./Projects.jsx":459,"react":439}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40947,13 +41005,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = require('react-bootstrap');
 
-var _projectItems = require('../../js/projectItems');
+var _carouselItems = require('../../js/carouselItems');
 
-var _projectItems2 = _interopRequireDefault(_projectItems);
+var _carouselItems2 = _interopRequireDefault(_carouselItems);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function toCarouselItems(item, i) {
+function toCarouselComp(item, i) {
 	return _react2.default.createElement(
 		_reactBootstrap.Carousel.Item,
 		{ key: i },
@@ -40964,30 +41022,30 @@ function toCarouselItems(item, i) {
 			_react2.default.createElement(
 				'h3',
 				null,
-				item.label
+				item['label']
 			),
 			_react2.default.createElement(
 				'p',
 				null,
-				item.desc
+				item['desc']
 			)
 		)
 	);
 }
 function ControlledCarousel() {
-	var carouselItems = _projectItems2.default.map(function (item, i) {
-		return toCarouselItems(item, i);
+	var carouselComps = _carouselItems2.default.map(function (item, i) {
+		return toCarouselComp(item, i);
 	});
 	return _react2.default.createElement(
 		_reactBootstrap.Carousel,
 		{ id: 'controlled-carousel', controls: false, interval: 4000, pauseOnHover: false },
-		carouselItems
+		carouselComps
 	);
 }
 
 exports.default = ControlledCarousel;
 
-},{"../../js/projectItems":449,"react":439,"react-bootstrap":259}],454:[function(require,module,exports){
+},{"../../js/carouselItems":446,"react":439,"react-bootstrap":259}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41014,7 +41072,7 @@ function Cover() {
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'heading-container rellax', 'data-rellax-speed': '-9' },
+				{ className: 'heading-container rellax', 'data-rellax-speed': '-5' },
 				_react2.default.createElement(
 					'p',
 					{ className: 'heading' },
@@ -41032,7 +41090,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":439}],455:[function(require,module,exports){
+},{"react":439}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41076,7 +41134,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":439}],456:[function(require,module,exports){
+},{"react":439}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41106,7 +41164,78 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":439}],457:[function(require,module,exports){
+},{"react":439}],458:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = require('react-bootstrap');
+
+var _projectItems = require('../../js/projectItems');
+
+var _projectItems2 = _interopRequireDefault(_projectItems);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function toThumb(item, i) {
+	return _react2.default.createElement(
+		_reactBootstrap.Col,
+		{ xs: 10, sm: 10, md: 6, key: i },
+		_react2.default.createElement(
+			_reactBootstrap.Thumbnail,
+			{ src: item['img'], alt: '242x200' },
+			_react2.default.createElement(
+				'h3',
+				null,
+				item['title']
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				item['subtitle']
+			)
+		)
+	);
+}
+
+function toRow(items, i) {
+	return _react2.default.createElement(
+		_reactBootstrap.Row,
+		{ key: i },
+		items
+	);
+}
+
+function ProjectGrid() {
+	var projectRows = [];
+	var row = [];
+	var projectThumbs = _projectItems2.default.map(function (item, i) {
+		return toThumb(item, i);
+	});
+	projectThumbs.forEach(function (thumb, i) {
+		var j = i + 1;
+		row.push(thumb);
+		if (j % 3 === 0 || j === projectThumbs.length) {
+			projectRows.push(row);
+			row = [];
+		}
+	});
+	return _react2.default.createElement(
+		_reactBootstrap.Grid,
+		null,
+		projectRows
+	);
+}
+
+exports.default = ProjectGrid;
+
+},{"../../js/projectItems":450,"react":439,"react-bootstrap":259}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41121,16 +41250,21 @@ var _ControlledCarousel = require('./ControlledCarousel.jsx');
 
 var _ControlledCarousel2 = _interopRequireDefault(_ControlledCarousel);
 
+var _ProjectGrid = require('./ProjectGrid.jsx');
+
+var _ProjectGrid2 = _interopRequireDefault(_ProjectGrid);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Projects() {
 	return _react2.default.createElement(
 		'div',
 		{ id: 'projects' },
-		_react2.default.createElement(_ControlledCarousel2.default, null)
+		_react2.default.createElement(_ControlledCarousel2.default, null),
+		_react2.default.createElement(_ProjectGrid2.default, null)
 	);
 }
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":453,"react":439}]},{},[451]);
+},{"./ControlledCarousel.jsx":454,"./ProjectGrid.jsx":458,"react":439}]},{},[452]);
