@@ -8,13 +8,14 @@ function Contact() {
 				<div className='icon yellow'></div>
 				<div className='icon green'></div>
 			</div>
-			<div className='about-content'>
-				<p className='about-heading'> Let's build something</p>
+			<div className='contact-content'>
+				<p className='contact-heading'> Let's build something</p>
 				<form>
 				<input placeholder='Name'></input>
 				<input placeholder='Email'></input>
 				<textarea placeholder='Message' rows='8'></textarea>
 				</form>
+				<div className='button'>Send</div>
 			</div>
 		</div>
 	);

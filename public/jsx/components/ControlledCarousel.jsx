@@ -1,4 +1,4 @@
-import React from 'react';
+	import React from 'react';
 import {Carousel, Glyphicon, Image} from 'react-bootstrap'; 
 import carouselItems from '../../js/carouselItems';
 

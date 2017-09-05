@@ -25,8 +25,8 @@ function cover() {
 	const MARGIN = 200;
 	const SCROLL_INDEX = .05;
 	const BODY_STYLE_DELAY = 500;
-	cover.addEventListener('mousemove', onMouseMove(event, SCROLL_INDEX, MARGIN));
-	cover.addEventListener('mouseenter', onMouseEnter(event, BODY_STYLE_DELAY));
+	// cover.addEventListener('mousemove', onMouseMove(event, SCROLL_INDEX, MARGIN));
+	// cover.addEventListener('mouseenter', onMouseEnter(event, BODY_STYLE_DELAY));
 }
 
 export default cover;

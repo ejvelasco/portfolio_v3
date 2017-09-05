@@ -1,26 +1,19 @@
 import React from 'react';
-import {Col, Thumbnail, Grid, Row} from 'react-bootstrap';
-import aboutTextItems from '../../js/aboutTextItems';
+import {Col, Thumbnail, Grid, Row, Image} from 'react-bootstrap';
 import aboutItems from '../../js/aboutItems';
 import Contact from './Contact.jsx';
+
 function toParagraph(item, i) {
 	return (
-		<p className='about-info' key={i}>{item}</p>
+		<div key={i}>
+		<p className='about-subheading'>{item['title']}</p>
+		<p className='about-info'>{item['text']}</p>
+		</div>
 	);
 }
-
-function toThumb(item, i) {
-	return (
-		<Col xs={10} sm={10} md={4} key={i}>
-			<img className='about-img' src={item['img']} />
-		</Col>
-	);
-}
-
 
 function About() {
-	const aboutParagraphs = aboutTextItems.map((item, i) => toParagraph(item, i));
-	const aboutThumbs = aboutItems.map((item, i) => toThumb(item, i)); 
+	const paragraphs = aboutItems.map((item, i) => toParagraph(item, i));
 	return (
 		<div>
 		<div id='about' className='tab'>
@@ -31,7 +24,8 @@ function About() {
 			</div>
 			<div className='about-content'>
 				<p className='about-heading'>About Me</p>
-				{aboutParagraphs}
+				{paragraphs}
+				<div className='button'>Visit flareUp</div>
 			</div>
 		</div>
 	</div>

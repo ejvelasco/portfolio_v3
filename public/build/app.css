@@ -755,7 +755,7 @@ body {
   z-index: 9998;
   margin-left: -100%;
   transition: all .4s ease-in-out;
-  background-color: #003161;
+  background-color: #122435;
   font-family: 'Lato', sans-serif;
   cursor: pointer; }
   #menu:hover {
@@ -833,6 +833,16 @@ a {
 .carousel {
   padding-top: 70px;
   padding-bottom: 70px; }
+
+.carousel-caption h3 {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase; }
+
+.carousel-caption p {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px; }
 
 .carousel-indicators li {
   border-radius: 0px !important;
@@ -954,6 +964,12 @@ a {
   border-radius: 10px;
   box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
 
+#about, #contact {
+  margin-top: 150px !important; }
+
+#contact {
+  margin-bottom: 150px !important; }
+
 .tab-bar {
   height: 30px;
   width: 100%;
@@ -964,13 +980,22 @@ a {
   border-top-right-radius: 10px; }
 
 .about-heading {
-  font-size: 40px;
+  font-size: 50px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 5px; }
 
+.about-subheading {
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0px;
+  margin-top: 20px; }
+
 .about-content {
-  padding: 80px; }
+  padding: 80px;
+  white-space: pre-wrap; }
 
 .about-info {
   color: white;
@@ -1033,7 +1058,23 @@ a {
 .contact-heading {
   font-family: 'Lato', sans-serif;
   color: white;
-  font-size: 50px; }
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 50px; }
+
+.profile {
+  display: block;
+  width: 100%;
+  height: 30%;
+  background: url("/img/placeholder.jpg");
+  margin: 0 auto;
+  margin-bottom: 50px; }
+
+.contact-content {
+  width: 70%;
+  margin: 0 auto;
+  padding: 80px; }
 
 .tab {
   font-family: 'Lato', sans-serif;
@@ -1041,11 +1082,30 @@ a {
   width: 70%;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6);
-  margin-bottom: 100px !important; }
+  box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
+
+.button {
+  font-size: 20px;
+  text-align: center;
+  padding: 18px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-left: 5px solid white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2); }
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+#about .button, #contact .button {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 40px; }
 
 #contact input, textarea {
-  width: 60%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   margin-bottom: 20px !important;
@@ -1055,9 +1115,6 @@ a {
   outline: none !important;
   color: white !important;
   font-size: 20px; }
-
-#contact form {
-  margin-top: 60px; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
