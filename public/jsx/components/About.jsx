@@ -34,13 +34,6 @@ function About() {
 				{aboutParagraphs}
 			</div>
 		</div>
-		{
-		// 	<Grid className='about-thumbs'>
-		// 	<Row>
-		// 		{aboutThumbs}
-		// 	</Row>
-		// </Grid>
-	}
 	</div>
 	);
 }
