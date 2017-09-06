@@ -17,6 +17,13 @@ body {
 .carousel-img {
 	margin: 0 auto !important;
 }
+.carousel .button {
+	width: 15%;
+	padding: 5;
+	margin-top: 30px !important;
+	font-size: 15px;
+	margin: 0 auto;
+}
 #cover {
 	position: relative;
 	height: 100%;
@@ -123,8 +130,9 @@ a {
 	padding-bottom: 70px;
 }
 .carousel-caption h3 {
+	font-size: 30px;
 	font-family: 'Lato', sans-serif;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 	color: transparentize(white, .3);
 	text-transform: uppercase;
 } 

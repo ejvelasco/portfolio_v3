@@ -9,6 +9,7 @@ function toCarouselComp(item, i) {
 			<Carousel.Caption>
 				<h3>{item['label']}</h3>
 				<p>{item['desc']}</p>
+				<div className='button'>View</div>
 			</Carousel.Caption>
 		</Carousel.Item>
 	);

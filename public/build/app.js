@@ -41203,6 +41203,11 @@ function toCarouselComp(item, i) {
 				'p',
 				null,
 				item['desc']
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'button' },
+				'View'
 			)
 		)
 	);
