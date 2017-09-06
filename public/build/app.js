@@ -40716,17 +40716,17 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var carouselItems = [{
-	label: 'First Label',
-	desc: 'Some cool stuff',
-	url: '/img/hummingbird.jpg'
+	label: 'flareUp',
+	desc: 'A light-weight Machine Learning library looking to grow up and change the world.',
+	url: '/img/network.png'
 }, {
-	label: 'Second Label',
-	desc: 'Some more cool stuff',
-	url: '/img/hummingbird.jpg'
+	label: 'SharedFi - SOFÍA',
+	desc: 'A friendly shopping assistant.',
+	url: '/img/texting.jpg'
 }, {
-	label: 'Third Label',
-	desc: 'Last cool stuff',
-	url: '/img/hummingbird.jpg'
+	label: 'ESplay',
+	desc: 'A modern JavaScript playground.',
+	url: '/img/lang.jpg'
 }];
 
 exports.default = carouselItems;
