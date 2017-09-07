@@ -274,8 +274,7 @@ a {
   font-family: 'Lato', sans-serif;
   position: relative;
   margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
+  border-radius: 10px; }
 
 #about, #contact {
   margin-top: 150px !important; }
@@ -284,6 +283,7 @@ a {
   margin-bottom: 150px !important; }
 
 .tab-bar {
+  display: none;
   height: 30px;
   width: 100%;
   padding-left: 6px;
@@ -394,8 +394,7 @@ a {
   position: relative;
   width: 65%;
   margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
+  border-radius: 10px; }
 
 .button {
   font-size: 20px;
