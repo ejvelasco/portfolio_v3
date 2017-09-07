@@ -40917,43 +40917,43 @@ var projectItems = [{
 	title: 'ESplay',
 	subtitle: 'A sleek ES6 playground.',
 	img: '/img/lang_sm.jpg',
-	url: 'https://github.com/velascoDev/ESplay',
+	url: 'https://github.com/ejvelasco/ESplay',
 	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
 }, {
 	title: 'Hummingbird',
 	subtitle: 'Enriching the classroom environment.',
 	img: '/img/hummingbird_sm.jpg',
-	url: 'https://github.com/velascoDev/hummingbird_dashboard',
+	url: 'https://github.com/ejvelasco/hummingbird_dashboard',
 	tech: 'Meteor, MongoDB, Blaze.'
 }, {
 	title: 'TCP Fun',
 	subtitle: 'A concise TCP project.',
 	img: '/img/lang_2_sm.jpg',
-	url: 'https://github.com/velascoDev/tcp_client',
+	url: 'https://github.com/ejvelasco/tcp_client',
 	tech: 'Node, ES6.'
 }, {
 	title: 'SharedFi - Portal',
 	subtitle: 'Next-gen targeted advertising. (Private)',
-	img: '/img/placeholder.jpg',
+	img: '/img/houses_sm.jpg',
 	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
 	tech: 'MongoDB, Express, Angular, Node, Pug, Bootstrap.'
 }, {
 	title: 'Portfolio',
 	subtitle: 'Like it? Check out the code.',
-	img: '/img/placeholder.jpg',
-	url: 'https://github.com/velascoDev/portfolio_v2',
+	img: '/img/apple_sm.jpg',
+	url: 'https://github.com/ejvelasco/portfolio_v3',
 	tech: 'Node, Express, jQuery, Pug, SASS, Bootstrap.'
 }, {
 	title: 'cBioPortal',
 	subtitle: 'Cancer genomics at MSK (Internship).',
-	img: '/img/placeholder.jpg',
-	url: 'https://github.com/velascoDev/cbioportal',
+	img: '/img/zuck_sm.jpg',
+	url: 'https://github.com/ejvelasco/cbioportal',
 	tech: 'D3.js, jQuery.'
 }, {
 	title: 'EasyTopo',
 	subtitle: 'Brain imaging simplified.',
-	img: '/img/placeholder.jpg',
-	url: 'https://github.com/velascoDev/EasyTopo',
+	img: '/img/easytopo_sm.jpeg',
+	url: 'https://github.com/ejvelasco/EasyTopo',
 	tech: 'MATLAB, FNIRS.'
 }];
 
