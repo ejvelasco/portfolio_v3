@@ -394,7 +394,8 @@ a {
   position: relative;
   width: 65%;
   margin: 0 auto;
-  border-radius: 10px; }
+  border-radius: 10px;
+  box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
 
 .button {
   font-size: 20px;
