@@ -910,7 +910,8 @@ a {
   text-align: center;
   font-weight: lighter;
   letter-spacing: 2px;
-  color: white; }
+  color: white;
+  transition: all .3s ease-in-out; }
 
 #screen {
   position: fixed;
