@@ -41274,23 +41274,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Cover() {
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ id: 'cover' },
 		_react2.default.createElement(
 			'div',
-			{ id: 'cover' },
+			{ className: 'social' },
+			_react2.default.createElement('i', { className: 'fa fa-facebook-square fa-3x' }),
+			_react2.default.createElement('i', { className: 'fa fa-github-square fa-3x' }),
+			_react2.default.createElement('i', { className: 'fa fa-linkedin-square fa-3x' })
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'heading-container rellax', 'data-rellax-speed': '-7' },
 			_react2.default.createElement(
-				'div',
-				{ className: 'heading-container rellax', 'data-rellax-speed': '-7' },
-				_react2.default.createElement(
-					'p',
-					{ className: 'heading' },
-					'eduardo velasco'
-				),
-				_react2.default.createElement(
-					'p',
-					{ id: 'greeting', className: 'greeting' },
-					'Welcome to my portfolio.'
-				)
+				'p',
+				{ className: 'heading' },
+				'eduardo velasco'
+			),
+			_react2.default.createElement(
+				'p',
+				{ id: 'greeting', className: 'greeting' },
+				'Welcome to my portfolio.'
 			)
 		)
 	);
