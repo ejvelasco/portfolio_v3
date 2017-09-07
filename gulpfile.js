@@ -4,7 +4,6 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
-const eslint = require('gulp-eslint');
 
 gulp.task('jsx', () => {
   return (
@@ -26,15 +25,9 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => { 
   livereload.listen();
-  gulp.watch('./public/js/**/*.js', ['jsx', 'lint'])
-  gulp.watch('./public/jsx/**/*.jsx', ['jsx', 'lint']);
+  gulp.watch('./public/js/**/*.js', ['jsx'])
+  gulp.watch('./public/jsx/**/*.jsx', ['jsx']);
   gulp.watch('./public/scss/*.scss', ['scss']);
 });
 
-gulp.task('lint', () => {
-    return gulp.src(['./public/jsx/**/*.jsx']) 
-      .pipe(eslint())
-      .pipe(eslint.format())
-});
-
-gulp.task('default', ['jsx','scss', 'watch', 'lint']);
+gulp.task('default', ['jsx','scss', 'watch']);

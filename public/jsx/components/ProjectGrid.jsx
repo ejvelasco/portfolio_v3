@@ -25,14 +25,11 @@ function ProjectGrid() {
 	const projectRows = [];
 	let row = [];
 	const projectThumbs = projectItems.map((item, i) => toThumb(item, i));
+	let j = 0;
 	projectThumbs.forEach((thumb, i) => {
-		const j = i + 1;
 		row.push(thumb);
-		if ((j % 3) === 0 || j === projectThumbs.length) {
-			projectRows.push(row);
-			row = [];
-		}
 	});
+	projectRows.push(row);
 	return (
 		<Grid id='grid'>
 			{projectRows}

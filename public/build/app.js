@@ -40903,29 +40903,34 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var projectItems = [{
+	title: 'flareUp',
+	subtitle: 'A light-weight Machine Learning library.',
+	img: '/img/network_sm.png',
+	tech: 'ES6'
+}, {
+	title: 'SharedFi - Sofía',
+	subtitle: 'A friendly Shopping Assistant (Private).',
+	img: '/img/texting_sm.jpg',
+	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
+	tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
+}, {
+	title: 'ESplay',
+	subtitle: 'A sleek ES6 playground.',
+	img: '/img/lang_sm.jpg',
+	url: 'https://github.com/velascoDev/ESplay',
+	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
+}, {
 	title: 'Hummingbird',
 	subtitle: 'Enriching the classroom environment.',
-	img: '/img/placeholder.jpg',
+	img: '/img/hummingbird_sm.jpg',
 	url: 'https://github.com/velascoDev/hummingbird_dashboard',
 	tech: 'Meteor, MongoDB, Blaze.'
 }, {
 	title: 'TCP Fun',
 	subtitle: 'A concise TCP project.',
-	img: '/img/placeholder.jpg',
+	img: '/img/lang_2_sm.jpg',
 	url: 'https://github.com/velascoDev/tcp_client',
 	tech: 'Node, ES6.'
-}, {
-	title: 'ESplay',
-	subtitle: 'A sleek ES6 playground.',
-	img: '/img/placeholder.jpg',
-	url: 'https://github.com/velascoDev/ESplay',
-	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
-}, {
-	title: 'SharedFi - Sofía',
-	subtitle: 'A friendly Shopping Assistant (Private).',
-	img: '/img/placeholder.jpg',
-	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
-	tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
 }, {
 	title: 'SharedFi - Portal',
 	subtitle: 'Next-gen targeted advertising. (Private)',
@@ -40940,7 +40945,7 @@ var projectItems = [{
 	tech: 'Node, Express, jQuery, Pug, SASS, Bootstrap.'
 }, {
 	title: 'cBioPortal',
-	subtitle: 'Cancer genomics initiative at MSK (Internship).',
+	subtitle: 'Cancer genomics at MSK (Internship).',
 	img: '/img/placeholder.jpg',
 	url: 'https://github.com/velascoDev/cbioportal',
 	tech: 'D3.js, jQuery.'
@@ -41416,14 +41421,11 @@ function ProjectGrid() {
 	var projectThumbs = _projectItems2.default.map(function (item, i) {
 		return toThumb(item, i);
 	});
+	var j = 0;
 	projectThumbs.forEach(function (thumb, i) {
-		var j = i + 1;
 		row.push(thumb);
-		if (j % 3 === 0 || j === projectThumbs.length) {
-			projectRows.push(row);
-			row = [];
-		}
 	});
+	projectRows.push(row);
 	return _react2.default.createElement(
 		_reactBootstrap.Grid,
 		{ id: 'grid' },
