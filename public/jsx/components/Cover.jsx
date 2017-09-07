@@ -1,12 +1,21 @@
 import React from 'react';
+import socialItems from '../../js/socialItems';
+import open from '../../js/open';
+
+function toSocialIcon(item, i) {
+	return (
+		<div className='icon-container'>
+			<i className={`fa fa-${item['name']}-square fa-3x`} onClick={open(item['url'])} key={i}></i>
+		</div>
+	);
+}
 
 function Cover(){
+	const socialIcons = socialItems.map((item, i) => toSocialIcon(item, i));
 	return (
 			<div id='cover'>
 				<div className='social'>
-					<i className="fa fa-facebook-square fa-3x"></i>
-					<i className="fa fa-github-square fa-3x"></i>
-					<i className="fa fa-linkedin-square fa-3x"></i>
+					{socialIcons}
 				</div>
 				<div className='heading-container rellax' data-rellax-speed='-7'>
 					<p className='heading' >eduardo velasco</p>

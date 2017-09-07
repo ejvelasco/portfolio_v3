@@ -19,18 +19,21 @@ function onInterval(greetings, p) {
 	return cb;
 }
 
-function onTimeout(greetings, p) {
+function onTimeout(greetings, p, j) {
 	function cb() {
-		let i = Math.floor(Math.random() * greetings.length);
-		p.innerHTML = greetings[i]; 
+		const N = greetings.length;
+		let i = Math.floor(Math.random() * N);
+		p.innerHTML = (p.innerHTML === greetings[i]) ? greetings[(i+1) % N] : greetings[i]; 
 		p.style.letterSpacing = '0px';
 		p.style.opacity = '1';
+		j = i;
 	}
 	return cb;
 }
 
 function greeting() {
 	const greetingParagraph = document.getElementById('greeting');
+	let j = 0;
 	setInterval(onInterval(greetings, greetingParagraph), 4000);
 }
 

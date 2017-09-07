@@ -40715,15 +40715,18 @@ Object.defineProperty(exports, "__esModule", {
 var carouselItems = [{
 	label: 'flareUp',
 	desc: 'A light-weight Machine Learning library looking to grow up and change the world.',
-	url: '/img/network.png'
+	img: '/img/network.png',
+	url: 'https://github.com/ejvelasco/flareUp'
 }, {
 	label: 'SharedFi - SOFÍA',
 	desc: 'A friendly shopping assistant.',
-	url: '/img/texting.jpg'
+	img: '/img/texting.jpg',
+	url: 'http://sharedfi.w11.wh-2.com/Master/index.html'
 }, {
-	label: 'ESplay',
-	desc: 'A modern JavaScript playground.',
-	url: '/img/lang.jpg'
+	label: 'TCP Fun',
+	desc: 'A concise TCP client.',
+	img: '/img/lang.jpg',
+	url: 'https://github.com/ejvelasco/tcp_client'
 }];
 
 exports.default = carouselItems;
@@ -40781,18 +40784,21 @@ function onInterval(greetings, p) {
 	return cb;
 }
 
-function onTimeout(greetings, p) {
+function onTimeout(greetings, p, j) {
 	function cb() {
-		var i = Math.floor(Math.random() * greetings.length);
-		p.innerHTML = greetings[i];
+		var N = greetings.length;
+		var i = Math.floor(Math.random() * N);
+		p.innerHTML = p.innerHTML === greetings[i] ? greetings[(i + 1) % N] : greetings[i];
 		p.style.letterSpacing = '0px';
 		p.style.opacity = '1';
+		j = i;
 	}
 	return cb;
 }
 
 function greeting() {
 	var greetingParagraph = document.getElementById('greeting');
+	var j = 0;
 	setInterval(onInterval(greetings, greetingParagraph), 4000);
 }
 
@@ -40836,7 +40842,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	(0, _greeting2.default)();
 });
 
-},{"./cover":448,"./greeting":449,"./menu":451,"./projects":453,"rellax":440,"smooth-scroll":441}],451:[function(require,module,exports){
+},{"./cover":448,"./greeting":449,"./menu":451,"./projects":454,"rellax":440,"smooth-scroll":441}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40925,6 +40931,21 @@ function menu() {
 exports.default = menu;
 
 },{}],452:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function open(url) {
+	function cb() {
+		window.open(url);
+	}
+	return cb;
+}
+
+exports.default = open;
+
+},{}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40934,6 +40955,7 @@ var projectItems = [{
 	title: 'flareUp',
 	subtitle: 'A light-weight Machine Learning library.',
 	img: '/img/network_sm.png',
+	url: 'https://github.com/ejvelasco/flareUp',
 	tech: 'ES6'
 }, {
 	title: 'SharedFi - Sofía',
@@ -40942,23 +40964,17 @@ var projectItems = [{
 	url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
 	tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
 }, {
-	title: 'ESplay',
-	subtitle: 'A sleek ES6 playground.',
-	img: '/img/lang_sm.jpg',
-	url: 'https://github.com/ejvelasco/ESplay',
-	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
+	title: 'TCP Fun',
+	subtitle: 'A concise TCP project.',
+	img: '/img/lang_2_sm.jpg',
+	url: 'https://github.com/ejvelasco/tcp_client',
+	tech: 'Node, ES6.'
 }, {
 	title: 'Hummingbird',
 	subtitle: 'Enriching the classroom environment.',
 	img: '/img/hummingbird_sm.jpg',
 	url: 'https://github.com/ejvelasco/hummingbird_dashboard',
 	tech: 'Meteor, MongoDB, Blaze.'
-}, {
-	title: 'TCP Fun',
-	subtitle: 'A concise TCP project.',
-	img: '/img/lang_2_sm.jpg',
-	url: 'https://github.com/ejvelasco/tcp_client',
-	tech: 'Node, ES6.'
 }, {
 	title: 'SharedFi - Portal',
 	subtitle: 'Next-gen targeted advertising. (Private)',
@@ -40978,6 +40994,12 @@ var projectItems = [{
 	url: 'https://github.com/ejvelasco/cbioportal',
 	tech: 'D3.js, jQuery.'
 }, {
+	title: 'ESplay',
+	subtitle: 'A sleek ES6 playground.',
+	img: '/img/lang_sm.jpg',
+	url: 'https://github.com/ejvelasco/ESplay',
+	tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
+}, {
 	title: 'EasyTopo',
 	subtitle: 'Brain imaging simplified.',
 	img: '/img/easytopo_sm.jpeg',
@@ -40987,7 +41009,7 @@ var projectItems = [{
 
 exports.default = projectItems;
 
-},{}],453:[function(require,module,exports){
+},{}],454:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40998,7 +41020,26 @@ function projects() {}
 
 exports.default = projects;
 
-},{}],454:[function(require,module,exports){
+},{}],455:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var socialItems = [{
+	name: 'twitter',
+	url: 'https://twitter.com/_ejvelasco'
+}, {
+	name: 'github',
+	url: 'https://github.com/ejvelasco'
+}, {
+	name: 'linkedin',
+	url: 'https://www.linkedin.com/in/ejvelasco/'
+}];
+
+exports.default = socialItems;
+
+},{}],456:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -41019,7 +41060,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":450,"./components/App.jsx":456,"react":439,"react-dom":270}],455:[function(require,module,exports){
+},{"../js/index.js":450,"./components/App.jsx":458,"react":439,"react-dom":270}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41039,6 +41080,10 @@ var _aboutItems2 = _interopRequireDefault(_aboutItems);
 var _Contact = require('./Contact.jsx');
 
 var _Contact2 = _interopRequireDefault(_Contact);
+
+var _open = require('../../js/open');
+
+var _open2 = _interopRequireDefault(_open);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41063,6 +41108,7 @@ function About() {
 	var paragraphs = _aboutItems2.default.map(function (item, i) {
 		return toParagraph(item, i);
 	});
+	var flareUpURL = 'https://github.com/ejvelasco/flareUp';
 	return _react2.default.createElement(
 		'div',
 		null,
@@ -41087,7 +41133,7 @@ function About() {
 				paragraphs,
 				_react2.default.createElement(
 					'div',
-					{ className: 'button' },
+					{ className: 'button', onClick: (0, _open2.default)(flareUpURL) },
 					'Visit flareUp'
 				)
 			)
@@ -41097,7 +41143,7 @@ function About() {
 
 exports.default = About;
 
-},{"../../js/aboutItems":446,"./Contact.jsx":457,"react":439,"react-bootstrap":259}],456:[function(require,module,exports){
+},{"../../js/aboutItems":446,"../../js/open":452,"./Contact.jsx":459,"react":439,"react-bootstrap":259}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41150,7 +41196,7 @@ function App() {
 
 exports.default = App;
 
-},{"./About.jsx":455,"./Contact.jsx":457,"./Cover.jsx":459,"./Menu.jsx":460,"./MenuToggle.jsx":461,"./Projects.jsx":463,"react":439}],457:[function(require,module,exports){
+},{"./About.jsx":457,"./Contact.jsx":459,"./Cover.jsx":461,"./Menu.jsx":462,"./MenuToggle.jsx":463,"./Projects.jsx":465,"react":439}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41200,7 +41246,7 @@ function Contact() {
 
 exports.default = Contact;
 
-},{"react":439}],458:[function(require,module,exports){
+},{"react":439}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41217,13 +41263,17 @@ var _carouselItems = require('../../js/carouselItems');
 
 var _carouselItems2 = _interopRequireDefault(_carouselItems);
 
+var _open = require('../../js/open');
+
+var _open2 = _interopRequireDefault(_open);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function toCarouselComp(item, i) {
 	return _react2.default.createElement(
 		_reactBootstrap.Carousel.Item,
 		{ key: i },
-		_react2.default.createElement(_reactBootstrap.Image, { className: 'carousel-img', src: item['url'], responsive: true }),
+		_react2.default.createElement(_reactBootstrap.Image, { className: 'carousel-img', src: item['img'], responsive: true }),
 		_react2.default.createElement(
 			_reactBootstrap.Carousel.Caption,
 			null,
@@ -41239,7 +41289,7 @@ function toCarouselComp(item, i) {
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'button' },
+				{ className: 'button', onClick: (0, _open2.default)(item['url']) },
 				'View'
 			)
 		)
@@ -41258,7 +41308,7 @@ function ControlledCarousel() {
 
 exports.default = ControlledCarousel;
 
-},{"../../js/carouselItems":447,"react":439,"react-bootstrap":259}],459:[function(require,module,exports){
+},{"../../js/carouselItems":447,"../../js/open":452,"react":439,"react-bootstrap":259}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41269,18 +41319,35 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _socialItems = require('../../js/socialItems');
+
+var _socialItems2 = _interopRequireDefault(_socialItems);
+
+var _open = require('../../js/open');
+
+var _open2 = _interopRequireDefault(_open);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function toSocialIcon(item, i) {
+	return _react2.default.createElement(
+		'div',
+		{ className: 'icon-container' },
+		_react2.default.createElement('i', { className: 'fa fa-' + item['name'] + '-square fa-3x', onClick: (0, _open2.default)(item['url']), key: i })
+	);
+}
+
 function Cover() {
+	var socialIcons = _socialItems2.default.map(function (item, i) {
+		return toSocialIcon(item, i);
+	});
 	return _react2.default.createElement(
 		'div',
 		{ id: 'cover' },
 		_react2.default.createElement(
 			'div',
 			{ className: 'social' },
-			_react2.default.createElement('i', { className: 'fa fa-facebook-square fa-3x' }),
-			_react2.default.createElement('i', { className: 'fa fa-github-square fa-3x' }),
-			_react2.default.createElement('i', { className: 'fa fa-linkedin-square fa-3x' })
+			socialIcons
 		),
 		_react2.default.createElement(
 			'div',
@@ -41301,7 +41368,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"react":439}],460:[function(require,module,exports){
+},{"../../js/open":452,"../../js/socialItems":455,"react":439}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41363,7 +41430,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":439}],461:[function(require,module,exports){
+},{"react":439}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41393,7 +41460,7 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":439}],462:[function(require,module,exports){
+},{"react":439}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41418,7 +41485,7 @@ function toThumb(item, i) {
 		{ xs: 10, sm: 10, md: 4, key: i },
 		_react2.default.createElement(
 			_reactBootstrap.Thumbnail,
-			{ src: item['img'], alt: '242x200' },
+			{ src: item['img'], onClick: redirect(item['url']), alt: '242x200' },
 			_react2.default.createElement(
 				'h3',
 				null,
@@ -41433,12 +41500,11 @@ function toThumb(item, i) {
 	);
 }
 
-function toRow(items, i) {
-	return _react2.default.createElement(
-		_reactBootstrap.Row,
-		{ key: i },
-		items
-	);
+function redirect(url) {
+	function cb() {
+		window.open(url);
+	}
+	return cb;
 }
 
 function ProjectGrid() {
@@ -41461,7 +41527,7 @@ function ProjectGrid() {
 
 exports.default = ProjectGrid;
 
-},{"../../js/projectItems":452,"react":439,"react-bootstrap":259}],463:[function(require,module,exports){
+},{"../../js/projectItems":453,"react":439,"react-bootstrap":259}],465:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41493,4 +41559,4 @@ function Projects() {
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":458,"./ProjectGrid.jsx":462,"react":439}]},{},[454]);
+},{"./ControlledCarousel.jsx":460,"./ProjectGrid.jsx":464,"react":439}]},{},[456]);

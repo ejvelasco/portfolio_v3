@@ -2,6 +2,7 @@ import React from 'react';
 import {Col, Thumbnail, Grid, Row, Image} from 'react-bootstrap';
 import aboutItems from '../../js/aboutItems';
 import Contact from './Contact.jsx';
+import open from '../../js/open';
 
 function toParagraph(item, i) {
 	return (
@@ -14,6 +15,7 @@ function toParagraph(item, i) {
 
 function About() {
 	const paragraphs = aboutItems.map((item, i) => toParagraph(item, i));
+	const flareUpURL = 'https://github.com/ejvelasco/flareUp';
 	return (
 		<div>
 		<div id='about' className='tab'>
@@ -25,7 +27,7 @@ function About() {
 			<div className='about-content'>
 				<p className='about-heading'>About Me</p>
 				{paragraphs}
-				<div className='button'>Visit flareUp</div>
+				<div className='button' onClick={open(flareUpURL)}>Visit flareUp</div>
 			</div>
 		</div>
 	</div>

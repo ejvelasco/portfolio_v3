@@ -3,6 +3,7 @@ const projectItems = [
 		title: 'flareUp',
 		subtitle: 'A light-weight Machine Learning library.',
 		img: '/img/network_sm.png',
+		url: 'https://github.com/ejvelasco/flareUp',
 		tech: 'ES6'
 	},
 	{
@@ -13,11 +14,11 @@ const projectItems = [
 		tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
 	},
 	{
-		title: 'ESplay',
-		subtitle: 'A sleek ES6 playground.',
-		img: '/img/lang_sm.jpg',
-		url: 'https://github.com/ejvelasco/ESplay', 
-		tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
+		title: 'TCP Fun',
+		subtitle: 'A concise TCP project.',
+		img: '/img/lang_2_sm.jpg',
+		url: 'https://github.com/ejvelasco/tcp_client', 
+		tech: 'Node, ES6.'
 	},
 	{
 		title: 'Hummingbird',
@@ -25,13 +26,6 @@ const projectItems = [
 		img: '/img/hummingbird_sm.jpg',
 		url:'https://github.com/ejvelasco/hummingbird_dashboard', 
 		tech: 'Meteor, MongoDB, Blaze.'
-	},
-	{
-		title: 'TCP Fun',
-		subtitle: 'A concise TCP project.',
-		img: '/img/lang_2_sm.jpg',
-		url: 'https://github.com/ejvelasco/tcp_client', 
-		tech: 'Node, ES6.'
 	},
 	{
 		title: 'SharedFi - Portal',
@@ -53,6 +47,13 @@ const projectItems = [
 		img: '/img/zuck_sm.jpg',
 		url: 'https://github.com/ejvelasco/cbioportal', 
 		tech: 'D3.js, jQuery.'
+	},
+	{
+		title: 'ESplay',
+		subtitle: 'A sleek ES6 playground.',
+		img: '/img/lang_sm.jpg',
+		url: 'https://github.com/ejvelasco/ESplay', 
+		tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
 	},
 	{
 		title: 'EasyTopo',

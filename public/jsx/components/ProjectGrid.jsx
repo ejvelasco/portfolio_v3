@@ -5,7 +5,7 @@ import projectItems from '../../js/projectItems';
 function toThumb(item, i) {
 	return (
 		<Col xs={10} sm={10} md={4} key={i}>
-			<Thumbnail src={item['img']} alt="242x200">
+			<Thumbnail src={item['img']} onClick={redirect(item['url'])} alt="242x200">
 			  <h3>{item['title']}</h3>
 			  <p>{item['subtitle']}</p>
 			</Thumbnail>
@@ -13,12 +13,11 @@ function toThumb(item, i) {
 	);
 }
 
-function toRow(items, i) {
-	return (
-		<Row key={i}>
-			{items}
-		</Row>
-	);
+function redirect(url) {
+	function cb() {
+		window.open(url);
+	}
+	return cb;
 }
 
 function ProjectGrid() {
