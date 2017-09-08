@@ -41021,6 +41021,80 @@ exports.default = projects;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+function showError(item) {
+	var sendButton = document.getElementById('sendButton');
+	sendButton.innerHTML = 'send';
+	var error = document.getElementById('error');
+	var msg = document.createElement('p');
+	var icon = document.createElement('span');
+	icon.classList.add('glyphicon');
+	icon.classList.add('glyphicon-exclamation-sign');
+	msg.innerHTML = 'Please enter a valid ' + item.error + '.';
+	error.innerHTML = '';
+	error.appendChild(icon);
+	error.appendChild(msg);
+	error.style.display = 'block';
+	setTimeout(function () {
+		error.style.display = 'none';
+	}, 3000);
+}
+
+function send(event) {
+	var name = document.getElementById('name');
+	var email = document.getElementById('email');
+	var msg = document.getElementById('msg');
+	var sendButton = document.getElementById('sendButton');
+	if (sendButton.innerHTML === 'thank you') {
+		return;
+	}
+	var details = {
+		name: name.value,
+		email: email.value,
+		msg: msg.value
+	};
+	var re = {
+		name: /^[a-zA-Z ]+$/,
+		email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+		msg: /\S+/
+	};
+	var invalid = Object.keys(details).some(function (key) {
+		var hasError = !re[key].test(details[key]);
+		if (hasError === true) {
+			showError({ error: key });
+		}
+		return hasError;
+	});
+	if (invalid) {
+		return;
+	}
+	event.currentTarget.innerHTML = 'sending...';
+	var http = new XMLHttpRequest();
+	var url = '/send';
+	http.open('POST', url, true);
+	http.setRequestHeader('Content-type', 'application/json');
+	http.onreadystatechange = function () {
+		if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+			var errorItem = JSON.parse(http.responseText);
+			if (errorItem.error) {
+				showError(errorItem);
+			} else {
+				sendButton.innerHTML = 'thank you';
+			}
+		} else if (http.readyState === XMLHttpRequest.DONE) {
+			console.log('error connecting to server');
+		}
+	};
+	http.send(JSON.stringify(details));
+}
+
+exports.default = send;
+
+},{}],456:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 var socialItems = [{
 	name: 'twitter',
 	url: 'https://twitter.com/_ejvelasco'
@@ -41034,7 +41108,7 @@ var socialItems = [{
 
 exports.default = socialItems;
 
-},{}],456:[function(require,module,exports){
+},{}],457:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -41055,7 +41129,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":450,"./components/App.jsx":458,"react":439,"react-dom":270}],457:[function(require,module,exports){
+},{"../js/index.js":450,"./components/App.jsx":459,"react":439,"react-dom":270}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41138,7 +41212,7 @@ function About() {
 
 exports.default = About;
 
-},{"../../js/aboutItems":446,"../../js/open":452,"./Contact.jsx":459,"react":439,"react-bootstrap":259}],458:[function(require,module,exports){
+},{"../../js/aboutItems":446,"../../js/open":452,"./Contact.jsx":460,"react":439,"react-bootstrap":259}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41191,7 +41265,7 @@ function App() {
 
 exports.default = App;
 
-},{"./About.jsx":457,"./Contact.jsx":459,"./Cover.jsx":461,"./Menu.jsx":462,"./MenuToggle.jsx":463,"./Projects.jsx":465,"react":439}],459:[function(require,module,exports){
+},{"./About.jsx":458,"./Contact.jsx":460,"./Cover.jsx":462,"./Menu.jsx":463,"./MenuToggle.jsx":464,"./Projects.jsx":466,"react":439}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41201,6 +41275,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _send = require('../../js/send');
+
+var _send2 = _interopRequireDefault(_send);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41226,13 +41304,14 @@ function Contact() {
 			_react2.default.createElement(
 				'form',
 				null,
-				_react2.default.createElement('input', { placeholder: 'Name' }),
-				_react2.default.createElement('input', { placeholder: 'Email' }),
-				_react2.default.createElement('textarea', { placeholder: 'Message', rows: '8' })
+				_react2.default.createElement('input', { placeholder: 'Name', id: 'name' }),
+				_react2.default.createElement('input', { placeholder: 'Email', id: 'email' }),
+				_react2.default.createElement('textarea', { placeholder: 'Message', rows: '8', id: 'msg' })
 			),
+			_react2.default.createElement('p', { id: 'error' }),
 			_react2.default.createElement(
 				'div',
-				{ className: 'button' },
+				{ className: 'button', id: 'sendButton', onClick: _send2.default },
 				'Send'
 			)
 		)
@@ -41241,7 +41320,7 @@ function Contact() {
 
 exports.default = Contact;
 
-},{"react":439}],460:[function(require,module,exports){
+},{"../../js/send":455,"react":439}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41303,7 +41382,7 @@ function ControlledCarousel() {
 
 exports.default = ControlledCarousel;
 
-},{"../../js/carouselItems":447,"../../js/open":452,"react":439,"react-bootstrap":259}],461:[function(require,module,exports){
+},{"../../js/carouselItems":447,"../../js/open":452,"react":439,"react-bootstrap":259}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41363,7 +41442,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"../../js/open":452,"../../js/socialItems":455,"react":439}],462:[function(require,module,exports){
+},{"../../js/open":452,"../../js/socialItems":456,"react":439}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41425,7 +41504,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":439}],463:[function(require,module,exports){
+},{"react":439}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41455,7 +41534,7 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":439}],464:[function(require,module,exports){
+},{"react":439}],465:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41522,7 +41601,7 @@ function ProjectGrid() {
 
 exports.default = ProjectGrid;
 
-},{"../../js/projectItems":453,"react":439,"react-bootstrap":259}],465:[function(require,module,exports){
+},{"../../js/projectItems":453,"react":439,"react-bootstrap":259}],466:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41554,4 +41633,4 @@ function Projects() {
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":460,"./ProjectGrid.jsx":464,"react":439}]},{},[456]);
+},{"./ControlledCarousel.jsx":461,"./ProjectGrid.jsx":465,"react":439}]},{},[457]);

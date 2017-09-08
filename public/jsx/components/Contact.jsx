@@ -1,5 +1,5 @@
 import React from 'react';
-
+import send from '../../js/send';
 function Contact() {
 	return (
 		<div id='contact' className='tab'>
@@ -11,11 +11,12 @@ function Contact() {
 			<div className='contact-content'>
 				<p className='contact-heading'> Let's build something</p>
 				<form>
-				<input placeholder='Name'></input>
-				<input placeholder='Email'></input>
-				<textarea placeholder='Message' rows='8'></textarea>
+				<input placeholder='Name' id='name'></input>
+				<input placeholder='Email' id='email'></input>
+				<textarea placeholder='Message' rows='8' id='msg'></textarea>
 				</form>
-				<div className='button'>Send</div>
+				<p id='error'></p>
+				<div className='button' id='sendButton' onClick={send}>Send</div>
 			</div>
 		</div>
 	);
