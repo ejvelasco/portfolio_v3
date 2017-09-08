@@ -1,7 +1,7 @@
 const carouselItems = [
 	{
 		label: 'flareUp',
-		desc: 'A light-weight Machine Learning library looking to grow up and change the world.',
+		desc: 'A light-weight Machine Learning library.',
 		img: '/img/network.png', 
 		url: 'https://github.com/ejvelasco/flareUp'
 	},

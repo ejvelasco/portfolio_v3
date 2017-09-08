@@ -40714,7 +40714,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var carouselItems = [{
 	label: 'flareUp',
-	desc: 'A light-weight Machine Learning library looking to grow up and change the world.',
+	desc: 'A light-weight Machine Learning library.',
 	img: '/img/network.png',
 	url: 'https://github.com/ejvelasco/flareUp'
 }, {
@@ -40759,13 +40759,8 @@ function onMouseEnter(event, BODY_STYLE_DELAY) {
 }
 
 function cover() {
-	var cover = document.getElementById('cover');
-	var projects = document.getElementById('projects');
-	var MARGIN = 200;
-	var SCROLL_INDEX = .05;
-	var BODY_STYLE_DELAY = 500;
-	// cover.addEventListener('mousemove', onMouseMove(event, SCROLL_INDEX, MARGIN));
-	// cover.addEventListener('mouseenter', onMouseEnter(event, BODY_STYLE_DELAY));
+	var bgDiv = document.getElementById('background');
+	bgDiv.style.opacity = '1';
 }
 
 exports.default = cover;
@@ -40895,7 +40890,7 @@ function onClick(event, menu, bars, screen) {
 		} else {
 			screen.style.opacity = '0';
 			screen.style.zIndex = '-1';
-			menu.style.marginLeft = '-100%';
+			menu.style.marginLeft = '-120%';
 			onMouseLeave(event, menu, bars)();
 		}
 	}
@@ -40906,7 +40901,7 @@ function linkOnClick(event, menu, screen, bars) {
 		screen.style.opacity = '0';
 		screen.style.zIndex = '-1';
 		menu.style.opacity = '0';
-		menu.style.marginLeft = '-100%';
+		menu.style.marginLeft = '-120%';
 		onMouseLeave(event, menu, bars)();
 	}
 	return cb;
@@ -41332,8 +41327,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function toSocialIcon(item, i) {
 	return _react2.default.createElement(
 		'div',
-		{ className: 'icon-container' },
-		_react2.default.createElement('i', { className: 'fa fa-' + item['name'] + '-square fa-3x', onClick: (0, _open2.default)(item['url']), key: i })
+		{ className: 'icon-container', key: i },
+		_react2.default.createElement('i', { className: 'fa fa-' + item['name'] + '-square fa-3x', onClick: (0, _open2.default)(item['url']) })
 	);
 }
 
@@ -41482,7 +41477,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function toThumb(item, i) {
 	return _react2.default.createElement(
 		_reactBootstrap.Col,
-		{ xs: 10, sm: 10, md: 4, key: i },
+		{ className: 'col-centered', xs: 12, sm: 10, md: 4, key: i },
 		_react2.default.createElement(
 			_reactBootstrap.Thumbnail,
 			{ src: item['img'], onClick: redirect(item['url']), alt: '242x200' },

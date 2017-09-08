@@ -3,11 +3,17 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300, 500,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
-  background: url("/img/apple.jpg");
-  background-position: -200 -200;
-  background-attachment: fixed;
   margin: 0 !important;
   padding: 0 !important; }
+
+#background {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: url("/img/apple.jpg");
+  background-position: -200 -200;
+  position: fixed;
+  transition: opacity 3s ease; }
 
 #projects {
   padding-left: 30px !important;
@@ -65,7 +71,7 @@ body {
   position: fixed;
   height: 100%;
   z-index: 9998;
-  margin-left: -100%;
+  margin-left: -125%;
   transition: all .4s ease-in-out;
   background-color: #122435;
   font-family: 'Lato', sans-serif;
@@ -444,3 +450,98 @@ a {
 :-moz-placeholder {
   /* Firefox 18- */
   color: white; }
+
+@media screen and (max-width: 1700px) {
+  .contact-heading {
+    font-size: 25px !important;
+    letter-spacing: 3px; } }
+
+@media screen and (max-width: 1200px) {
+  .thumbnail .caption p {
+    font-size: 12px; }
+  .thumbnail .caption h3 {
+    font-size: 15px !important; }
+  .contact-heading {
+    font-size: 18px !important;
+    letter-spacing: 3px; }
+  .about-heading {
+    font-size: 20px !important;
+    letter-spacing: 3px; }
+  .about-subheading {
+    font-size: 18px !important; }
+  .contact-content {
+    width: 90%; }
+  .button {
+    font-size: 15px !important;
+    width: 50% !important; }
+  .heading {
+    font-size: 40px !important; }
+  .greeting {
+    font-size: 20px;
+    top: 48% !important; }
+  #controlled-carousel {
+    padding-top: 300px !important; }
+  #controlled-carousel h3 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    letter-spacing: 3px; }
+  #controlled-carousel p {
+    font-size: 15px; }
+  #controlled-carousel .button {
+    padding: 10px;
+    margin: 0 auto !important;
+    width: 25% !important; } }
+
+@media screen and (max-width: 800px) {
+  .contact-content {
+    width: 100%;
+    padding: 40px !important; }
+  .about-content {
+    width: 100%;
+    padding: 40px; }
+  #contact, #about {
+    width: 90%; }
+  .button {
+    width: 100% !important; }
+  .heading {
+    font-size: 30px !important; }
+  .greeting {
+    font-size: 15px;
+    top: 49% !important; }
+  #controlled-carousel {
+    display: none; }
+  #projects {
+    padding: 0 !important; }
+  .col-centered {
+    display: block;
+    float: none;
+    margin: 0 auto !important; }
+  #menu ul li {
+    font-size: 15px; }
+  #grid {
+    padding-top: 300px !important; } }
+
+@media screen and (max-width: 500px) {
+  .heading {
+    letter-spacing: 2px;
+    font-size: 20px !important; }
+  .greeting {
+    font-size: 12px !important;
+    top: 50% !important; }
+  .about-content {
+    padding: 30px; }
+  .contact-content {
+    padding: 30px !important; }
+  #about, #contact {
+    width: 95%; }
+  .fa {
+    margin: 2 5 2 4 !important;
+    padding: 0 !important; }
+  .icon-container {
+    margin-right: 0px;
+    box-shadow: none;
+    padding: 2 !important; } }
+
+@media screen and (max-width: 400px) {
+  #menu {
+    margin-left: -125% !important; } }

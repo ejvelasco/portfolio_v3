@@ -4,8 +4,8 @@ import open from '../../js/open';
 
 function toSocialIcon(item, i) {
 	return (
-		<div className='icon-container'>
-			<i className={`fa fa-${item['name']}-square fa-3x`} onClick={open(item['url'])} key={i}></i>
+		<div className='icon-container' key={i}>
+			<i className={`fa fa-${item['name']}-square fa-3x`} onClick={open(item['url'])}></i>
 		</div>
 	);
 }
