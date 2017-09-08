@@ -2,15 +2,15 @@ const nodemailer = require('nodemailer');
 
 function send(res, details, invalid) {
 	const transporter = nodemailer.createTransport({
-		service: 'Gmail',
+		service: 'EMAIL_PROVIDER',
 		auth: {
-			user: 'velasco810@gmail.com',
-			pass: 'getafe.99'
+			user: 'YOUR_EMAIL',
+			pass: 'YOUR_PASSWORD'
 		}
 	});
 	const options = {
-		to: 'velasco810@gmail.com',
-		subject: 'PORTFOLIO CONTACT',
+		to: 'DESTINATION_EMAIL',
+		subject: 'SUBJECT',
 		text: `Message: ${details.msg}\nName: ${details.name}\nEmail: ${details.email}`
 	};
 	transporter.sendMail(options, (err) => {
