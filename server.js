@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 app.post('/send', (req, res) => {
 	const details = req.body;
-	const [invalid, error] = validate(res, details);
+	const [invalid, error] = validate(details);
 	if (invalid) {
 		res.json(error);
 	} else {
