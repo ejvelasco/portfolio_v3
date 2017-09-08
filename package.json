@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aos": "^2.2.0",
     "babelify": "^7.3.0",
     "body-parser": "^1.17.2",
     "browserify": "^14.4.0",
@@ -23,7 +22,6 @@
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
     "rellax": "^1.1.0",
-    "scrollreveal": "^3.3.6",
     "smooth-scroll": "^12.1.4",
     "vinyl-source-stream": "^1.1.0"
   },

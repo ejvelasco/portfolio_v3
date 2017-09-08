@@ -40737,27 +40737,6 @@ exports.default = carouselItems;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-function adjustBodyStyle() {
-	document.body.style.transition = '';
-}
-
-function onMouseMove(event, SCROLL_INDEX, MARGIN) {
-	function cb(event) {
-		var X_OFF = Math.floor(SCROLL_INDEX * event.clientX) - MARGIN;
-		var Y_OFF = Math.floor(SCROLL_INDEX * event.clientY) - MARGIN;
-		document.body.style.backgroundPosition = X_OFF + 'px ' + Y_OFF + 'px';
-	}
-	return cb;
-}
-
-function onMouseEnter(event, BODY_STYLE_DELAY) {
-	function cb(event) {
-		document.body.style.transition = 'background .5s ease';
-		setTimeout(adjustBodyStyle, BODY_STYLE_DELAY);
-	}
-	return cb;
-}
-
 function cover() {
 	var bgDiv = document.getElementById('background');
 	bgDiv.style.opacity = '1';
@@ -40822,22 +40801,17 @@ var _cover = require('./cover');
 
 var _cover2 = _interopRequireDefault(_cover);
 
-var _projects = require('./projects');
-
-var _projects2 = _interopRequireDefault(_projects);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
 	var rellax = new _rellax2.default('.rellax');
 	var scroll = new _smoothScroll2.default('a[href*="#"]');
-	(0, _menu2.default)();
 	(0, _cover2.default)();
-	(0, _projects2.default)();
+	(0, _menu2.default)();
 	(0, _greeting2.default)();
 });
 
-},{"./cover":448,"./greeting":449,"./menu":451,"./projects":454,"rellax":440,"smooth-scroll":441}],451:[function(require,module,exports){
+},{"./cover":448,"./greeting":449,"./menu":451,"rellax":440,"smooth-scroll":441}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41005,28 +40979,16 @@ var projectItems = [{
 exports.default = projectItems;
 
 },{}],454:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function projects() {}
-
-exports.default = projects;
-
-},{}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-function showError(item) {
-	var sendButton = document.getElementById('sendButton');
-	sendButton.innerHTML = 'send';
+function showError(item, sendButton) {
 	var error = document.getElementById('error');
 	var msg = document.createElement('p');
 	var icon = document.createElement('span');
+	sendButton.innerHTML = 'send';
 	icon.classList.add('glyphicon');
 	icon.classList.add('glyphicon-exclamation-sign');
 	msg.innerHTML = 'Please enter a valid ' + item.error + '.';
@@ -41039,19 +41001,32 @@ function showError(item) {
 	}, 3000);
 }
 
-function send(event) {
-	var name = document.getElementById('name');
-	var email = document.getElementById('email');
-	var msg = document.getElementById('msg');
-	var sendButton = document.getElementById('sendButton');
-	if (sendButton.innerHTML === 'thank you') {
-		return;
+function onReadyStateChange(http, sendButton) {
+	function cb() {
+		if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+			var errorItem = JSON.parse(http.responseText);
+			if (errorItem.error) {
+				showError(errorItem, sendButton);
+			} else {
+				sendButton.innerHTML = 'thank you';
+			}
+		} else if (http.readyState === XMLHttpRequest.DONE) {
+			console.log('error connecting to server');
+		}
 	}
-	var details = {
-		name: name.value,
-		email: email.value,
-		msg: msg.value
-	};
+	return cb;
+}
+
+function request(sendButton, details) {
+	var http = new XMLHttpRequest();
+	var url = '/send';
+	http.open('POST', url, true);
+	http.setRequestHeader('Content-type', 'application/json');
+	http.onreadystatechange = onReadyStateChange(http, sendButton);
+	http.send(JSON.stringify(details));
+}
+
+function validate(details) {
 	var re = {
 		name: /^[a-zA-Z ]+$/,
 		email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -41060,36 +41035,32 @@ function send(event) {
 	var invalid = Object.keys(details).some(function (key) {
 		var hasError = !re[key].test(details[key]);
 		if (hasError === true) {
-			showError({ error: key });
+			showError({ error: key }, sendButton);
 		}
 		return hasError;
 	});
-	if (invalid) {
-		return;
-	}
-	event.currentTarget.innerHTML = 'sending...';
-	var http = new XMLHttpRequest();
-	var url = '/send';
-	http.open('POST', url, true);
-	http.setRequestHeader('Content-type', 'application/json');
-	http.onreadystatechange = function () {
-		if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
-			var errorItem = JSON.parse(http.responseText);
-			if (errorItem.error) {
-				showError(errorItem);
-			} else {
-				sendButton.innerHTML = 'thank you';
-			}
-		} else if (http.readyState === XMLHttpRequest.DONE) {
-			console.log('error connecting to server');
-		}
+	return invalid;
+}
+
+function send(event) {
+	if (sendButton.innerHTML === 'thank you') return;
+	var name = document.getElementById('name');
+	var email = document.getElementById('email');
+	var msg = document.getElementById('msg');
+	var details = {
+		name: name.value,
+		email: email.value,
+		msg: msg.value
 	};
-	http.send(JSON.stringify(details));
+	var invalid = validate(details);
+	if (invalid) return;
+	event.currentTarget.innerHTML = 'sending...';
+	request(sendButton, details);
 }
 
 exports.default = send;
 
-},{}],456:[function(require,module,exports){
+},{}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41108,7 +41079,7 @@ var socialItems = [{
 
 exports.default = socialItems;
 
-},{}],457:[function(require,module,exports){
+},{}],456:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -41129,7 +41100,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
-},{"../js/index.js":450,"./components/App.jsx":459,"react":439,"react-dom":270}],458:[function(require,module,exports){
+},{"../js/index.js":450,"./components/App.jsx":458,"react":439,"react-dom":270}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41212,7 +41183,7 @@ function About() {
 
 exports.default = About;
 
-},{"../../js/aboutItems":446,"../../js/open":452,"./Contact.jsx":460,"react":439,"react-bootstrap":259}],459:[function(require,module,exports){
+},{"../../js/aboutItems":446,"../../js/open":452,"./Contact.jsx":459,"react":439,"react-bootstrap":259}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41265,7 +41236,7 @@ function App() {
 
 exports.default = App;
 
-},{"./About.jsx":458,"./Contact.jsx":460,"./Cover.jsx":462,"./Menu.jsx":463,"./MenuToggle.jsx":464,"./Projects.jsx":466,"react":439}],460:[function(require,module,exports){
+},{"./About.jsx":457,"./Contact.jsx":459,"./Cover.jsx":461,"./Menu.jsx":462,"./MenuToggle.jsx":463,"./Projects.jsx":465,"react":439}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41320,7 +41291,7 @@ function Contact() {
 
 exports.default = Contact;
 
-},{"../../js/send":455,"react":439}],461:[function(require,module,exports){
+},{"../../js/send":454,"react":439}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41382,7 +41353,7 @@ function ControlledCarousel() {
 
 exports.default = ControlledCarousel;
 
-},{"../../js/carouselItems":447,"../../js/open":452,"react":439,"react-bootstrap":259}],462:[function(require,module,exports){
+},{"../../js/carouselItems":447,"../../js/open":452,"react":439,"react-bootstrap":259}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41442,7 +41413,7 @@ function Cover() {
 
 exports.default = Cover;
 
-},{"../../js/open":452,"../../js/socialItems":456,"react":439}],463:[function(require,module,exports){
+},{"../../js/open":452,"../../js/socialItems":455,"react":439}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41504,7 +41475,7 @@ function Menu() {
 
 exports.default = Menu;
 
-},{"react":439}],464:[function(require,module,exports){
+},{"react":439}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41534,7 +41505,7 @@ function MenuToggle() {
 
 exports.default = MenuToggle;
 
-},{"react":439}],465:[function(require,module,exports){
+},{"react":439}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41601,7 +41572,7 @@ function ProjectGrid() {
 
 exports.default = ProjectGrid;
 
-},{"../../js/projectItems":453,"react":439,"react-bootstrap":259}],466:[function(require,module,exports){
+},{"../../js/projectItems":453,"react":439,"react-bootstrap":259}],465:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41633,4 +41604,4 @@ function Projects() {
 
 exports.default = Projects;
 
-},{"./ControlledCarousel.jsx":461,"./ProjectGrid.jsx":465,"react":439}]},{},[457]);
+},{"./ControlledCarousel.jsx":460,"./ProjectGrid.jsx":464,"react":439}]},{},[456]);
