@@ -11,10 +11,14 @@ gulp.task('jsx', () => {
     browserify('./public/jsx/app.jsx')
     .transform('babelify', {presets: ['es2015', 'react']})
     .transform(envify({
-      NODE_ENV: 'production'
+      NODE_ENV: 'production',
+      global: true
     }))
+    .transform('uglifyify', { 
+      global: true  
+    })
     .bundle()
-    .pipe(source('app.js'))
+    .pipe(source('app.min.js'))
     .pipe(gulp.dest('./public/build/'))
     .pipe(livereload())
   );
