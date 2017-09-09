@@ -55,9 +55,8 @@ function onClick(event, menu, bars, screen) {
 function linkOnClick(event, menu, screen, bars) {
 	function cb(event) {
 		screen.style.opacity = '0';
-		screen.style.zIndex = '-1';
+		// menu.style.marginLeft = '-100%';
 		menu.style.opacity = '0';
-		menu.style.marginLeft = '-100%';
 		onMouseLeave(event, menu, bars)();
 	}
 	return cb;
