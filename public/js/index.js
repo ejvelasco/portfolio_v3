@@ -11,7 +11,7 @@ window.mobileAndTabletcheck = () => {
 };
 
 document.addEventListener("DOMContentLoaded", (event) => { 
-	if (window.mobileAndTabletcheck()) {
+	if (window.mobileAndTabletcheck() === false) {
 		const rellax = new Rellax('.rellax');
 	}
 	const scroll = new SmoothScroll('a[href*="#"]');
