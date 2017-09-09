@@ -4,11 +4,15 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
+const envify = require('envify/custom');
 
 gulp.task('jsx', () => {
   return (
     browserify('./public/jsx/app.jsx')
     .transform('babelify', {presets: ['es2015', 'react']})
+    .transform(envify({
+      NODE_ENV: 'production'
+    }))
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./public/build/'))
