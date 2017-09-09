@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const validate = require('./validate');
-const send = require('./send');
+const send = require('./send-prod');
 
 const appPath = path.join(__dirname, 'public/build/app.html'); 
 const staticPath = path.join(__dirname, '/public');
