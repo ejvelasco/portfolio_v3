@@ -17,7 +17,7 @@ $menu-color: #002447;
 	letter-spacing: $spacing;
 } 
 @mixin subheading($size, $spacing, $opacity) {
-	color: transparentize($primary-color, $opacity);
+	color: transparentize($primary-color, $opacity) !important;
 	@include heading($size, $spacing);	
 }
 
@@ -131,6 +131,7 @@ body {
 	background-color: transparentize($primary-color, .7);
 	box-shadow: 3px 3px 15px transparentize($shadow-color, .8);
 	@include subheading(20px, 5px, .7);
+	color: white !important;
 	&:hover {
 		background-color: transparentize($primary-color, .5);
 	}
