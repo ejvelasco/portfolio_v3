@@ -509,9 +509,6 @@ body {
 	#menu ul li {
 		font-size: 15px;
 	}
-	#grid {
-		padding-top: 300px !important;
-	}
 }
 @media screen and (max-width: 500px) {
 	.heading {
@@ -556,10 +553,5 @@ body {
 	}
 	.social {
 		margin: 10px;
-	}
-}
-@media screen and (max-width: 400px) {
-	#menu {
-		// margin-left: -125% !important;
 	}
 }

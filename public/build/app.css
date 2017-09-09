@@ -499,9 +499,7 @@ body {
     float: none;
     margin: 0 auto !important; }
   #menu ul li {
-    font-size: 15px; }
-  #grid {
-    padding-top: 300px !important; } }
+    font-size: 15px; } }
 
 @media screen and (max-width: 500px) {
   .heading {
