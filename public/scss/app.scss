@@ -3,20 +3,38 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300, 500,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+$primary-font: 'Lato', sans-serif;
+$primary-color: white;
+$error-color: red;
+$shadow-color: black;
+$menu-color: #002447;
+
+@mixin heading($size, $spacing) {
+	font-family: $primary-font;
+	font-size: $size; 
+	color: $primary-color;
+	text-transform: uppercase;
+	letter-spacing: $spacing;
+} 
+@mixin subheading($size, $spacing, $opacity) {
+	color: transparentize($primary-color, $opacity);
+	@include heading($size, $spacing);	
+}
+
 ::-webkit-input-placeholder { 
-  color: white;
+  color: $primary-color;
 }
 ::-moz-placeholder { 
-  color: white;
+  color: $primary-color;
 }
 :-ms-input-placeholder { 
-  color: white;
+  color: $primary-color;
 }
 :-moz-placeholder { 
-  color: white;
+  color: $primary-color;
 }
 a {
-	color: white !important;
+	color: $primary-color !important;
 	text-decoration: none !important;
 }
 body {
@@ -35,13 +53,10 @@ body {
 }
 .about-content {
 	padding: 80px;
-	white-space: pre-wrap;
+	$primary-color-space: pre-wrap;
 }
 .about-heading {
-	font-size: 50px; 
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
+	@include heading(50px, 5px);
 }
 .about-img {
 	height: 200px;
@@ -50,14 +65,14 @@ body {
 	position: relative;
 	top: 0; 
 	left: 0;
-	box-shadow: 5px 5px 10px transparentize(black, .5);
-	background-color: transparentize(white, .7);
+	box-shadow: 5px 5px 10px transparentize($shadow-color, .5);
+	background-color: transparentize($primary-color, .7);
 	margin-bottom: 100px !important;
 	transition: all .2s ease-in-out;
 	&:hover {
 		left: -10px;
 		top: -10px;
-		box-shadow: 3px 3px 20px transparentize(white, .5);
+		box-shadow: 3px 3px 20px transparentize($primary-color, .5);
 	}
 }
 .about-thumbs {
@@ -67,16 +82,13 @@ body {
 	height: 100px;
 }
 .about-info {
-	color: white;
+	color: $primary-color;
 	font-size: 20px;
 }
 .about-subheading {
-	font-size: 25px; 
-	color: transparentize(white, .5);
-	text-transform: uppercase;
-	letter-spacing: 3px;
 	margin-bottom: 0px;
 	margin-top: 20px;
+	@include subheading(25px, 3px, .5);
 }
 #about, #contact {
 	margin-top: 150px !important;
@@ -106,24 +118,20 @@ body {
 	margin-top: 7px;
 	margin-bottom: 7px;
 	height: 2px;
-	background-color: white;
+	background-color: $primary-color;
 	width: 65%;
 	transition: all .3s ease-in-out;
 }
 .button {
-	font-size: 20px;
 	text-align: center;
 	padding: 18px;
-	color: white;
-	background-color: transparentize(white, .7);
-	border-left: 5px solid white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
+	border-left: 5px solid $primary-color;
 	transition: all .3s ease-in-out;
 	cursor: pointer;
-	box-shadow: 3px 3px 15px transparentize(black, .8);
+	box-shadow: 3px 3px 15px transparentize($shadow-color, .8);
+	@include subheading(20px, 5px, .7);
 	&:hover {
-		background-color: transparentize(white, .5);
+		background-color: transparentize($primary-color, .5);
 	}
 }
 .carousel {
@@ -131,14 +139,10 @@ body {
 	padding-bottom: 70px;
 }
 .carousel-caption h3 {
-	font-size: 30px;
-	font-family: 'Lato', sans-serif;
-	letter-spacing: 5px;
-	color: transparentize(white, .3);
-	text-transform: uppercase;
+	@include subheading(30px, 5px, .3);
 } 
 .carousel-caption p {
-	font-family: 'Lato', sans-serif;
+	font-family: $primary-font;
 	font-size: 20px;
 }
 .carousel-control {
@@ -147,17 +151,6 @@ body {
 }
 .carousel-img {
 	margin: 0 auto !important;
-}
-.carousel-indicators li {
-	border-radius: 0px !important;
-	border: none !important;
-	background-color: white;
-	width: 30px !important;
-	height: 1px !important;
-}
-.carousel-indicators li .active {
-	border: none !important;
-	height: 3px !important;
 }
 .carousel .button {
 	width: 15%;
@@ -180,10 +173,10 @@ body {
 	margin: 0 auto;
 	margin-bottom: 20px !important;
 	padding: 10px;
-	background-color: transparentize(white, .7);
+	background-color: transparentize($primary-color, .7);
 	border: none;
 	outline: none !important;
-	color: white !important;
+	color: $primary-color !important;
 	font-size: 20px;
 }
 .contact-content {
@@ -192,26 +185,21 @@ body {
 	padding: 80px;
 }
 .contact-heading {
-	font-family: 'Lato', sans-serif;
-	color: white; 
-	font-size: 50px;
-	text-transform: uppercase;
-	letter-spacing: 5px;
+	@include heading(50px, 5px);
 	margin-bottom: 50px !important;
-
 }
 #error {
 	text-align: center;
 	font-size: 15px;
 	display: none;
 	transition: all .4s ease-in-out;
-	background-color: lighten(red, 40%);
+	background-color: lighten($error-color, 40%);
 	padding: 8px !important;
 	right: 0;
 	left: 0;
 	margin: 0 auto;
 	width: 100%;
-	color: lighten(red, 15%);
+	color: lighten($error-color, 15%);
 }
 #error .glyphicon, #error p {
 	padding: 0 !important;
@@ -223,13 +211,10 @@ body {
 }
 .fa {
 	cursor: pointer;
-	color: white;
+	color: $primary-color;
 	border-radius: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
-}
-.green {
-	background-color: #41DF60;
 }
 .greeting {
 	font-size: 25px;
@@ -238,28 +223,21 @@ body {
   	top: 47% !important;
   	transform: translateY(-50%);
 	padding: 0 !important;
-	font-family: 'Lato', sans-serif;
+	font-family: $primary-font;
 	text-align: center;
-	font-weight: lighter;
 	letter-spacing: 2px;
-	color: white;
+	color: $primary-color;
 	transition: all .3s ease-in-out;
 }
 #grid {
 	padding-top: 100px !important;
 }
 .heading {
-	vertical-align: middle;
-	font-family: 'Lato', sans-serif;
-	text-align: center;
-	position: relative;
-	text-transform: uppercase;
-	letter-spacing: 8px;
-	font-size: 60px !important;
-  	color: white;
-  	transform: translateY(-50%);
   	top: 50% !important;
+  	transform: translateY(-50%);
+	position: relative;
   	margin: 0 !important;
+	@include heading(60px, 8px);
 }
 .heading-container {
 	height: 100%;
@@ -276,20 +254,8 @@ body {
 	display: inline-block;
 	margin-right: 20px;
 	padding: 8px 3px 8px 3px;
-	background-color: transparentize(white, .7);
-	box-shadow: 5px 5px 10px transparentize(black, .6);
-}
-.logo {
-	position: absolute;
-	padding-top: 40px;
-	left: 50%;
-	right: 0;
-	margin: 0 auto;
-	font-size: 30px;
-	font-family: 'Lato', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	color: white;
+	background-color: transparentize($primary-color, .7);
+	box-shadow: 5px 5px 10px transparentize($shadow-color, .6);
 }
 #menu-toggle {
 	position: fixed;
@@ -299,9 +265,9 @@ body {
 	width: 45px;
 	margin: 40px;
 	z-index: 9999;
-	background-color: transparentize(white, .7);
+	background-color: transparentize($primary-color, .7);
 	cursor: pointer;
-	box-shadow: 3px 3px 15px transparentize(black, .6);
+	box-shadow: 3px 3px 15px transparentize($shadow-color, .6);
 }
 #menu {
 	position: fixed;
@@ -309,8 +275,8 @@ body {
 	z-index: 9998;
 	margin-left: -125%;
 	transition: all .4s ease-in-out;
-	background-color: desaturate(#002447, 50%);
-	font-family: 'Lato', sans-serif;
+	background-color: desaturate($menu-color, 50%);
+	font-family: $primary-font;
 	cursor: pointer;
 	&:hover {
 		margin-left: 0px !important; 
@@ -318,28 +284,25 @@ body {
 }
 #menu ul {
 	list-style: none;
-	border-top: 1px solid white;
+	border-top: 1px solid $primary-color;
 	width: 100%;
 	margin-top: 130px;
 }
 #menu ul li {
-	font-size: 35px;
 	margin-right: 40px;
 	text-align: center;
 	padding: 30px;
 	padding-left: 0px;
 	padding-right: 0px;
-	color: white;
-	background-color: transparentize(white, .7);
-	border-left: 5px solid white;
+	background-color: transparentize($primary-color, .7);
+	border-left: 5px solid $primary-color;
 	margin-top: 40px;
 	margin-bottom: 40px;
-	text-transform: uppercase;
-	letter-spacing: 5px;
 	transition: all .3s ease-in-out;
-	box-shadow: 3px 3px 15px transparentize(black, .6);
+	box-shadow: 3px 3px 15px transparentize($shadow-color, .6);
+	@include heading(35px, 5px);
 	&:hover {
-		background-color: transparentize(white, .5);
+		background-color: transparentize($primary-color, .5);
 	}
 }
 #menu ul li a {
@@ -348,26 +311,15 @@ body {
 	padding-right: 50px;
 }
 .message {
-	font-family: 'Lato', sans-serif;
+	font-family: $primary-font;
 	font-weight: bold;
 	text-align: center;
 	font-size: 50px !important;
-	color: white;	
+	color: $primary-color;	
 }
 #projects {
 	padding-left: 30px !important;
 	padding-right: 30px !important;
-}
-.profile {
-	display: block;
-	width: 100%;
-	height: 30%;
-	background: url('/img/placeholder.jpg');
-	margin: 0 auto;
-	margin-bottom: 50px;
-}
-.red {
-	background-color: #FF4646;
 }
 #screen {
 	position: fixed;
@@ -375,7 +327,7 @@ body {
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	background-color: darken(#002447, 5%);
+	background-color: darken($menu-color, 5%);
 	z-index: -1;
 	transition: all .4s ease-in-out;
 }
@@ -400,39 +352,24 @@ body {
 	margin-bottom: 0 !important;
 }
 .subtitle {
-	font-family: 'Lato', sans-serif;
-	color: white;
+	font-family: $primary-font;
+	color: $primary-color;
 }
 .tab {
-	font-family: 'Lato', sans-serif;
+	font-family: $primary-font;
 	position: relative;
 	width: 65%;
 	margin: 0 auto;
 	border-radius: 10px;
-	box-shadow: 10px 10px 70px transparentize(black, .4);
-}
-.tab-bar {
-	display: none;
-	height: 30px;
-	width: 100%;
-	padding-left: 6px;
-	padding-top: 5px;
-	background-color: white;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	box-shadow: 10px 10px 70px transparentize($shadow-color, .4);
 }
 .title {
-	font-family: 'Lato', sans-serif;
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-size: 60px;
-
 	font-weight: bold;
+	@include heading(60px, 5px);
 }
 .thumbnail {
 	cursor: pointer !important;
-	font-family: 'Lato', sans-serif;
+	font-family: $primary-font;
 	margin-bottom: 60px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -443,34 +380,28 @@ body {
 	border: none !important;
 	padding: 0 !important;
 	background-color: transparent;
-	background-color: transparentize(white, .8);
-	box-shadow: 5px 5px 20px transparentize(black, .7);
+	background-color: transparentize($primary-color, .8);
+	box-shadow: 5px 5px 20px transparentize($shadow-color, .7);
 	transition: all .2s ease-in-out;
 	&:hover {
 		left: -10px;
 		top: -10px;
-		box-shadow: 3px 3px 20px transparentize(white, .5);
+		box-shadow: 3px 3px 20px transparentize($primary-color, .5);
 	}
 }
 .thumbnail .caption {
 	padding-left: 20px;
 }
 .thumbnail .caption p {
-	color: white !important;
+	color: $primary-color !important;
 	font-weight: bold;
 }
 .thumbnail .caption h3 {
-	font-size: 20px !important;
 	font-weight: bold;
-	color: transparentize(white, .4) !important;
-	letter-spacing: 3px;
-	text-transform: uppercase;
+	@include subheading(20px, 3px, .4);
 }
 .transparent {
 	display: none;
-}
-.yellow {
-	background-color: #FFDD46;
 }
 @media screen and (max-width: 1700px) {
 	.contact-heading {
@@ -555,7 +486,7 @@ body {
 	#projects {
 		padding: 0 !important;
 	}
-	.col-centered {
+	.col-cente$error-color {
 		display: block;
 		float:none;
 		margin: 0 auto !important;

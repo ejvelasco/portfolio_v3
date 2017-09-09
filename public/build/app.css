@@ -33,10 +33,10 @@ body {
   box-shadow: none !important; }
 
 .about-content {
-  padding: 80px;
-  white-space: pre-wrap; }
+  padding: 80px; }
 
 .about-heading {
+  font-family: "Lato", sans-serif;
   font-size: 50px;
   color: white;
   text-transform: uppercase;
@@ -69,12 +69,14 @@ body {
   font-size: 20px; }
 
 .about-subheading {
-  font-size: 25px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 3px;
   margin-bottom: 0px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px; }
 
 #about, #contact {
   margin-top: 150px !important; }
@@ -109,17 +111,18 @@ body {
   transition: all .3s ease-in-out; }
 
 .button {
-  font-size: 20px;
   text-align: center;
   padding: 18px;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.3);
   border-left: 5px solid white;
-  text-transform: uppercase;
-  letter-spacing: 5px;
   transition: all .3s ease-in-out;
   cursor: pointer;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2); }
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.3);
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px; }
   .button:hover {
     background-color: rgba(255, 255, 255, 0.5); }
 
@@ -128,14 +131,15 @@ body {
   padding-bottom: 70px; }
 
 .carousel-caption h3 {
-  font-size: 30px;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 5px;
   color: rgba(255, 255, 255, 0.7);
-  text-transform: uppercase; }
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px; }
 
 .carousel-caption p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 20px; }
 
 .carousel-control {
@@ -144,17 +148,6 @@ body {
 
 .carousel-img {
   margin: 0 auto !important; }
-
-.carousel-indicators li {
-  border-radius: 0px !important;
-  border: none !important;
-  background-color: white;
-  width: 30px !important;
-  height: 1px !important; }
-
-.carousel-indicators li .active {
-  border: none !important;
-  height: 3px !important; }
 
 .carousel .button {
   width: 15%;
@@ -189,9 +182,9 @@ body {
   padding: 80px; }
 
 .contact-heading {
-  font-family: 'Lato', sans-serif;
-  color: white;
+  font-family: "Lato", sans-serif;
   font-size: 50px;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 50px !important; }
@@ -224,9 +217,6 @@ body {
   margin-left: 10px;
   margin-right: 10px; }
 
-.green {
-  background-color: #41DF60; }
-
 .greeting {
   font-size: 25px;
   position: relative;
@@ -234,9 +224,8 @@ body {
   top: 47% !important;
   transform: translateY(-50%);
   padding: 0 !important;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
-  font-weight: lighter;
   letter-spacing: 2px;
   color: white;
   transition: all .3s ease-in-out; }
@@ -245,17 +234,15 @@ body {
   padding-top: 100px !important; }
 
 .heading {
-  vertical-align: middle;
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 60px !important;
-  color: white;
-  transform: translateY(-50%);
   top: 50% !important;
-  margin: 0 !important; }
+  transform: translateY(-50%);
+  position: relative;
+  margin: 0 !important;
+  font-family: "Lato", sans-serif;
+  font-size: 60px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 8px; }
 
 .heading-container {
   height: 100%;
@@ -274,18 +261,6 @@ body {
   padding: 8px 3px 8px 3px;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); }
-
-.logo {
-  position: absolute;
-  padding-top: 40px;
-  left: 50%;
-  right: 0;
-  margin: 0 auto;
-  font-size: 30px;
-  font-family: 'Lato', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: white; }
 
 #menu-toggle {
   position: fixed;
@@ -306,7 +281,7 @@ body {
   margin-left: -125%;
   transition: all .4s ease-in-out;
   background-color: #122435;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   cursor: pointer; }
   #menu:hover {
     margin-left: 0px !important; }
@@ -318,21 +293,22 @@ body {
   margin-top: 130px; }
 
 #menu ul li {
-  font-size: 35px;
   margin-right: 40px;
   text-align: center;
   padding: 30px;
   padding-left: 0px;
   padding-right: 0px;
-  color: white;
   background-color: rgba(255, 255, 255, 0.3);
   border-left: 5px solid white;
   margin-top: 40px;
   margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
   transition: all .3s ease-in-out;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px; }
   #menu ul li:hover {
     background-color: rgba(255, 255, 255, 0.5); }
 
@@ -342,7 +318,7 @@ body {
   padding-right: 50px; }
 
 .message {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bold;
   text-align: center;
   font-size: 50px !important;
@@ -351,17 +327,6 @@ body {
 #projects {
   padding-left: 30px !important;
   padding-right: 30px !important; }
-
-.profile {
-  display: block;
-  width: 100%;
-  height: 30%;
-  background: url("/img/placeholder.jpg");
-  margin: 0 auto;
-  margin-bottom: 50px; }
-
-.red {
-  background-color: #FF4646; }
 
 #screen {
   position: fixed;
@@ -394,38 +359,28 @@ body {
   margin-bottom: 0 !important; }
 
 .subtitle {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: white; }
 
 .tab {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   position: relative;
   width: 65%;
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.6); }
 
-.tab-bar {
-  display: none;
-  height: 30px;
-  width: 100%;
-  padding-left: 6px;
-  padding-top: 5px;
-  background-color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
-
 .title {
-  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 60px;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 60px;
-  font-weight: bold; }
+  letter-spacing: 5px; }
 
 .thumbnail {
   cursor: pointer !important;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin-bottom: 60px;
   margin-left: 20px;
   margin-right: 20px;
@@ -452,17 +407,16 @@ body {
   font-weight: bold; }
 
 .thumbnail .caption h3 {
-  font-size: 20px !important;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.6) !important;
-  letter-spacing: 3px;
-  text-transform: uppercase; }
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px; }
 
 .transparent {
   display: none; }
-
-.yellow {
-  background-color: #FFDD46; }
 
 @media screen and (max-width: 1700px) {
   .contact-heading {
@@ -525,7 +479,7 @@ body {
     display: none; }
   #projects {
     padding: 0 !important; }
-  .col-centered {
+  .col-cente$error-color {
     display: block;
     float: none;
     margin: 0 auto !important; }
