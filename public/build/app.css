@@ -157,6 +157,18 @@ body {
   font-size: 15px;
   margin: 0 auto; }
 
+.carousel-indicators li {
+  width: 40px;
+  height: 1px;
+  background-color: white;
+  border: none !important; }
+
+.carousel-indicators .active {
+  height: 3px;
+  width: 40px;
+  background-color: white;
+  border: none !important; }
+
 #cover {
   position: relative;
   height: 100%;
